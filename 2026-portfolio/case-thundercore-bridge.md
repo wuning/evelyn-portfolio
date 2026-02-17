@@ -38,7 +38,6 @@ ThunderCore Bridge 是一個跨鏈資產轉移工具，
 
 ## **一開始，團隊以為在解的問題**
 ![[01-01.png]]
-![01-01.png](attachment:aa66bd9c-7cd9-4b7f-b639-94a1efdc3ca0:01-01.png)
 
 在專案初期，問題被定義得很直接：
 
@@ -59,9 +58,7 @@ ThunderCore Bridge 是一個跨鏈資產轉移工具，
 ---
 
 ## **我開始察覺到的不對勁**
-
-![02-02.png](attachment:0925b849-a0c0-4692-872d-b2dfda82120e:02-02.png)
-![[02-02 1.png]]
+![[_attachments/02-02.png]]
 隨著討論深入，我開始意識到一件事：
 
 新用戶不敢用，
@@ -75,16 +72,13 @@ ThunderCore Bridge 是一個跨鏈資產轉移工具，
 在跨鏈操作中，錯誤不是發生在最後一步，
 
 而是發生在**選鏈、選資產的當下**。
-
-![03-0２.png](attachment:7c818724-2e42-4969-bc7e-8eb36ec5708c:03-0%EF%BC%92.png)
 ![[03-0２.png]]
+
 但現有流程卻能讓使用者在尚未充分意識到這一點的情況下，順利完成操作。
 
 這讓我開始懷疑：
 
 **我們是不是正在用「更好的介面」，掩蓋一個更危險的問題？**
-
-![04-0３.png](attachment:4714c176-4f80-48aa-9928-e96272887c11:04-0%EF%BC%93.png)
 ![[04-0３.png]]
 意識到這不是介面問題之後，我決定先重設討論本身
 
@@ -111,17 +105,9 @@ ThunderCore Bridge 是一個跨鏈資產轉移工具，
 > 而是釐清：
 > 
 > **什麼是最大阻力，錯誤發生在哪一刻最不能被接受。**
+
 ![[ThunderCore Birdge Workshop_Ship.png]]
-![ThunderCore Birdge Workshop_Ship.png](attachment:52311927-ac25-4937-8c31-4ab1ce7a27b0:ThunderCore_Birdge_Workshop_Ship.png)
-![[IMG_8953.png]]
-![IMG_8953.png](attachment:b1425f3a-c874-4052-8bf5-28efd082e360:IMG_8953.png)
-![[IMG_8953 1.png]]
-
-
-
-![[IMG_8953 2.png]]
-
-
+![[截圖 2026-02-17 14.20.11.png]]
 
 我刻意把「產出設計」從工作坊目標中拿掉，
 
@@ -218,9 +204,7 @@ ThunderCore Bridge 是一個跨鏈資產轉移工具，
 ---
 
 ### **6️⃣ 用「付出代價」測試判斷是否真的成立**
-
-![IMG_8952.png](attachment:988ac27d-c722-4c5b-9d57-52c2e1df8703:IMG_8952.png)
-
+![[截圖 2026-02-17 14.20.03.png]]
 在最後，我沒有用投票或喜好度評分來做決策。
 
 我用一個刻意簡化的測試，要求團隊回答：

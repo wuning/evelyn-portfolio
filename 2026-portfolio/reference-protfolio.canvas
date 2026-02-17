@@ -1,0 +1,8 @@
+{
+	"nodes":[
+		{"id":"1971303018177e0d","type":"link","url":"https://www.mrbrianmorris.com/work/query-formulation","x":-200,"y":-200,"width":400,"height":400},
+		{"id":"b036602869d94f02","type":"link","url":"https://rafa.design","x":280,"y":-200,"width":400,"height":400},
+		{"id":"6a07ba01094987ba","type":"link","url":"https://kat-wang.framer.website/#work2","x":-700,"y":-200,"width":400,"height":400}
+	],
+	"edges":[]
+}
