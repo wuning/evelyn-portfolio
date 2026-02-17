@@ -148,7 +148,11 @@
   }
 
   body {
-    background-color: var(--bg-primary);
+    background: 
+      radial-gradient(1400px 600px at 20% 10%, rgba(51,182,255,.10), transparent 60%),
+      radial-gradient(900px 600px at 70% 20%, rgba(183,255,60,.10), transparent 55%),
+      var(--bg-primary);
+    background-attachment: fixed;
     color: var(--text-primary);
     font-family: var(--font-inter), 'Noto Sans TC', system-ui, sans-serif;
     font-size: var(--text-body);
