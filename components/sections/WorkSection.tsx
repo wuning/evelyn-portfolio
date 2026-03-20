@@ -19,6 +19,7 @@ function useCases() {
       ],
       href: "/cases/bitodebt",
       featured: true,
+      interactive: true,
     },
     {
       tag: t("case.deposit.tag"),
@@ -28,6 +29,7 @@ function useCases() {
       metrics: [{ label: t("case.support"), value: "−23%" }],
       href: "/cases/deposit",
       featured: false,
+      interactive: true,
     },
     {
       tag: t("case.referral.tag"),
@@ -68,12 +70,19 @@ function CaseRow({
           : "bg-[var(--bg-surface)] rounded-[12px]"
       }`}
     >
-      <p
-        className="text-[11px] font-medium tracking-[0.15em] uppercase mb-2"
-        style={{ color: "var(--accent-brass)" }}
-      >
-        {caseItem.tag}
-      </p>
+      <div className="flex items-center gap-3 mb-2">
+        <p
+          className="text-[11px] font-medium tracking-[0.15em] uppercase"
+          style={{ color: "var(--accent-brass)" }}
+        >
+          {caseItem.tag}
+        </p>
+        {caseItem.interactive && (
+          <span className="text-[10px] tracking-[0.08em] uppercase text-[var(--accent-brass)] border border-[var(--accent-brass)] rounded-full px-2 py-0.5 leading-none">
+            Interactive Case Study
+          </span>
+        )}
+      </div>
       <p
         className={`text-[13px] mb-4 ${
           caseItem.featured

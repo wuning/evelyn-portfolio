@@ -203,8 +203,19 @@ export default function BitoDebtPage() {
           </div>
         </SectionReveal>
 
-        {/* Brand story callout */}
+        {/* Magic Bean mascot */}
         <SectionReveal delay={0.1}>
+          <div className="flex justify-center mb-6">
+            <img
+              src="/images/bitodebt/magic-bean-hero.png"
+              alt="Magic Bean — BitoDebt brand mascot"
+              className="w-[280px] md:w-[360px] h-auto drop-shadow-lg"
+            />
+          </div>
+        </SectionReveal>
+
+        {/* Brand story callout */}
+        <SectionReveal delay={0.2}>
           <div
             className="rounded-[12px] border-l-4 bg-[var(--bg-surface)] p-6"
             style={{ borderLeftColor: "var(--accent-brass)" }}
@@ -326,6 +337,10 @@ export default function BitoDebtPage() {
             </div>
           </div>
         </SectionReveal>
+
+        <SectionReveal delay={0.2}>
+          <DraggableTimeline events={timelineEvents} />
+        </SectionReveal>
       </CaseScene>
 
       {/* Section 7 — Cross-team Collaboration */}
@@ -393,6 +408,17 @@ export default function BitoDebtPage() {
                 <p className="text-[11px] text-[#78716C]">{m.sub}</p>
               </div>
             ))}
+          </div>
+        </SectionReveal>
+
+        {/* SOLD OUT — campaign milestone */}
+        <SectionReveal delay={0.05}>
+          <div className="flex justify-center mb-10">
+            <img
+              src="/images/bitodebt/sold-out.png"
+              alt="BitoDebt SOLD OUT — 100% subscribed"
+              className="w-[240px] md:w-[300px] h-auto rounded-[12px]"
+            />
           </div>
         </SectionReveal>
 
