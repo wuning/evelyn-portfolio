@@ -2,8 +2,11 @@
 
 import { SectionReveal } from "@/components/animations/SectionReveal"
 import { Mail, Linkedin, FileText } from "lucide-react"
+import { useI18n } from "@/lib/i18n"
 
 export function Footer() {
+  const { t } = useI18n()
+
   return (
     <footer
       id="contact"
@@ -15,9 +18,9 @@ export function Footer() {
             className="text-[32px] md:text-[40px] text-[var(--bg-primary)] mb-4"
             style={{ fontFamily: "Georgia, serif" }}
           >
-            Let&apos;s find the
+            {t("footer.headline1")}
             <br />
-            right path together.
+            {t("footer.headline2")}
           </h2>
           <a
             href="mailto:evelynwu.design@gmail.com"
@@ -56,7 +59,7 @@ export function Footer() {
               className="text-[#78716C] text-[12px] tracking-[0.05em] hover:text-[var(--accent-deep)] transition-colors duration-150 flex items-center gap-1.5"
             >
               <FileText size={14} />
-              Resume
+              {t("nav.resume")}
             </a>
           </div>
         </div>

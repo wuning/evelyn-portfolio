@@ -3,16 +3,18 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
-
-const navItems = [
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Resume", href: "#resume" },
-]
+import { useI18n } from "@/lib/i18n"
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { locale, t, toggle } = useI18n()
+
+  const navItems = [
+    { label: t("nav.work"), href: "#work" },
+    { label: t("nav.about"), href: "#about" },
+    { label: t("nav.resume"), href: "#resume" },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +36,6 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-6 md:px-[120px]">
-        {/* Logo */}
         <a
           href="/"
           className="text-[var(--text-primary)] text-[15px] tracking-[-0.02em] transition-colors duration-150 hover:text-[var(--accent-brass)]"
@@ -43,30 +44,41 @@ export function Header() {
           Eve&apos;s Eye
         </a>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <a
-              key={item.label}
+              key={item.href}
               href={item.href}
               className="text-[var(--text-secondary)] text-[13px] font-medium tracking-[0.02em] uppercase transition-colors duration-150 hover:text-[var(--text-primary)]"
             >
               {item.label}
             </a>
           ))}
+          <button
+            onClick={toggle}
+            className="rounded-[6px] border border-[var(--border-subtle)] px-3 py-1.5 text-[12px] font-medium text-[var(--text-secondary)] tracking-[0.02em] transition-all duration-150 hover:border-[var(--accent-brass)] hover:text-[var(--accent-brass)]"
+          >
+            {locale === "en" ? "中文" : "EN"}
+          </button>
         </nav>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-[var(--text-primary)] p-2"
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        <div className="md:hidden flex items-center gap-3">
+          <button
+            onClick={toggle}
+            className="text-[12px] font-medium text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded-[6px] px-2.5 py-1"
+          >
+            {locale === "en" ? "中文" : "EN"}
+          </button>
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="text-[var(--text-primary)] p-2"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -79,7 +91,7 @@ export function Header() {
             <nav className="flex flex-col px-6 py-4 gap-4">
               {navItems.map((item) => (
                 <a
-                  key={item.label}
+                  key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
                   className="text-[var(--text-secondary)] text-[15px] font-medium transition-colors duration-150 hover:text-[var(--text-primary)]"

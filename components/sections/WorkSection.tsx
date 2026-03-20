@@ -3,60 +3,61 @@
 import { SectionReveal } from "@/components/animations/SectionReveal"
 import { ArrowUpRight } from "lucide-react"
 import { motion } from "framer-motion"
+import { useI18n } from "@/lib/i18n"
 
-const cases = [
-  {
-    tag: "BITODEBT · FINTECH",
-    saw: "I saw: my blind spot",
-    title: "From experiment\nto market leader",
-    description:
-      "My assumption hurt users. I caught it same-day — then grew the product to market leader.",
-    metrics: [
-      { label: "CONVERSION", value: "+34%" },
-      { label: "TRADING VOL.", value: "+57%" },
-    ],
-    href: "/cases/bitodebt",
-    featured: true,
-  },
-  {
-    tag: "TT WALLET · DEPOSIT",
-    saw: "I saw: past the brief",
-    title: "Reveal before\nthey commit",
-    description:
-      "They asked for an entry point. I redesigned the entire flow.",
-    metrics: [{ label: "SUPPORT TICKETS", value: "−23%" }],
-    href: "/cases/deposit",
-    featured: false,
-  },
-  {
-    tag: "TT WALLET · REFERRAL",
-    saw: "I saw: the timing",
-    title: "Honest over\noptimised",
-    description:
-      "Right judgment, wrong timing. I learned when to push and when to wait.",
-    metrics: [{ label: "MAU", value: "+20%" }],
-    href: "/cases/referral",
-    featured: false,
-  },
-  {
-    tag: "THUNDERCORE · BRIDGE",
-    saw: "I saw: the room",
-    title: "When smooth\nis dangerous",
-    description:
-      "I paused the project to align the team first — redefining good UX for irreversible flows.",
-    metrics: [{ label: "UX STANDARD", value: "Redefined" }],
-    href: "/cases/bridge",
-    featured: false,
-  },
-]
+function useCases() {
+  const { t } = useI18n()
+  return [
+    {
+      tag: t("case.bitodebt.tag"),
+      saw: t("case.bitodebt.saw"),
+      title: t("case.bitodebt.title"),
+      description: t("case.bitodebt.desc"),
+      metrics: [
+        { label: t("case.conversion"), value: "+34%" },
+        { label: t("case.trading"), value: "+57%" },
+      ],
+      href: "/cases/bitodebt",
+      featured: true,
+    },
+    {
+      tag: t("case.deposit.tag"),
+      saw: t("case.deposit.saw"),
+      title: t("case.deposit.title"),
+      description: t("case.deposit.desc"),
+      metrics: [{ label: t("case.support"), value: "−23%" }],
+      href: "/cases/deposit",
+      featured: false,
+    },
+    {
+      tag: t("case.referral.tag"),
+      saw: t("case.referral.saw"),
+      title: t("case.referral.title"),
+      description: t("case.referral.desc"),
+      metrics: [{ label: t("case.mau"), value: "+20%" }],
+      href: "/cases/referral",
+      featured: false,
+    },
+    {
+      tag: t("case.bridge.tag"),
+      saw: t("case.bridge.saw"),
+      title: t("case.bridge.title"),
+      description: t("case.bridge.desc"),
+      metrics: [{ label: t("case.ux"), value: "Redefined" }],
+      href: "/cases/bridge",
+      featured: false,
+    },
+  ]
+}
 
 function CaseRow({
   caseItem,
   index,
 }: {
-  caseItem: (typeof cases)[0]
+  caseItem: ReturnType<typeof useCases>[0]
   index: number
 }) {
+  const { t } = useI18n()
   const imageLeft = index % 2 !== 0
 
   const contentBlock = (
@@ -159,7 +160,7 @@ function CaseRow({
           )}
         </div>
         <div className="flex items-center gap-1 mt-3 text-[var(--accent-brass)] text-[13px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span>Read case study</span>
+          <span>{t("case.read")}</span>
           <ArrowUpRight size={14} />
         </div>
       </motion.a>
@@ -168,11 +169,13 @@ function CaseRow({
 }
 
 export function WorkSection() {
+  const cases = useCases()
+
   return (
     <section id="work" className="py-[var(--space-2xl)] px-6 md:px-[120px]">
       <div className="mx-auto max-w-[1200px] space-y-6">
         {cases.map((caseItem, i) => (
-          <CaseRow key={caseItem.tag} caseItem={caseItem} index={i} />
+          <CaseRow key={i} caseItem={caseItem} index={i} />
         ))}
       </div>
     </section>

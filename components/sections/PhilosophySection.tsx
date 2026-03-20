@@ -1,28 +1,32 @@
 "use client"
 
 import { SectionReveal } from "@/components/animations/SectionReveal"
-
-const pillars = [
-  { number: "01", title: "Blind Spot", sub: "BitoDebt — Self-correction" },
-  { number: "02", title: "Past the Brief", sub: "Deposit — Analytical refusal" },
-  { number: "03", title: "The Timing", sub: "Referral — Strategic patience" },
-  { number: "04", title: "The Room", sub: "Bridge — Organizational diagnosis" },
-]
+import { useI18n } from "@/lib/i18n"
 
 export function PhilosophySection() {
+  const { t } = useI18n()
+
+  const pillars = [
+    { number: "01", title: t("phil.01.title"), sub: t("phil.01.sub") },
+    { number: "02", title: t("phil.02.title"), sub: t("phil.02.sub") },
+    { number: "03", title: t("phil.03.title"), sub: t("phil.03.sub") },
+    { number: "04", title: t("phil.04.title"), sub: t("phil.04.sub") },
+  ]
+
   return (
     <section className="py-[var(--space-section)] px-6 md:px-[120px] bg-[var(--bg-dark)]">
       <div className="mx-auto max-w-[1200px]">
         <SectionReveal>
           <p className="section-label mb-4" style={{ color: "var(--accent-deep)" }}>
-            Four Ways of Seeing
+            {t("phil.label")}
           </p>
           <h2
             className="mb-16 max-w-[500px] text-[var(--bg-primary)]"
             style={{ fontFamily: "Georgia, serif" }}
           >
-            Each time, seeing at
-            <br />a wider aperture.
+            {t("phil.headline1")}
+            <br />
+            {t("phil.headline2")}
           </h2>
         </SectionReveal>
 

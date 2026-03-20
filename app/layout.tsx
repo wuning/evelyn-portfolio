@@ -4,6 +4,7 @@ import "./globals.css"
 import { Header } from "@/components/sections/Header"
 import { ScrollProgress } from "@/components/animations/ScrollProgress"
 import { LenisProvider } from "@/components/animations/LenisProvider"
+import { I18nProvider } from "@/lib/i18n"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -33,12 +34,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
-        <LenisProvider>
-          <ScrollProgress />
-          <Header />
-          <div className="grain-overlay" aria-hidden="true" />
-          <main>{children}</main>
-        </LenisProvider>
+        <I18nProvider>
+          <LenisProvider>
+            <ScrollProgress />
+            <Header />
+            <div className="grain-overlay" aria-hidden="true" />
+            <main>{children}</main>
+          </LenisProvider>
+        </I18nProvider>
       </body>
     </html>
   )

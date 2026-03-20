@@ -2,14 +2,17 @@
 
 import { motion } from "framer-motion"
 import { Counter } from "@/components/animations/Counter"
-
-const metrics = [
-  { value: 5, suffix: "+", label: "YEARS FINTECH" },
-  { value: 4, suffix: "", label: "PRODUCTS SHIPPED" },
-  { value: 34, suffix: "%", label: "BEST CONVERSION LIFT" },
-]
+import { useI18n } from "@/lib/i18n"
 
 export function Hero() {
+  const { t } = useI18n()
+
+  const metrics = [
+    { value: 5, suffix: "+", label: t("hero.metric.years") },
+    { value: 4, suffix: "", label: t("hero.metric.products") },
+    { value: 34, suffix: "%", label: t("hero.metric.conversion") },
+  ]
+
   return (
     <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 md:px-[120px] pt-32 pb-20 md:pt-40 md:pb-32">
@@ -19,7 +22,7 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.2, ease: [0, 0, 0.2, 1] }}
           className="section-label mb-6"
         >
-          Senior Product Designer &middot; Fintech &amp; Web3
+          {t("hero.label")}
         </motion.p>
 
         <motion.h1
@@ -29,9 +32,9 @@ export function Hero() {
           className="mb-6 max-w-[700px]"
           style={{ fontFamily: "Georgia, 'Instrument Serif', serif" }}
         >
-          See the risk{" "}
+          {t("hero.headline1")}
           <br className="hidden md:block" />
-          before the click.
+          {t("hero.headline2")}
         </motion.h1>
 
         <motion.p
@@ -40,7 +43,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.7, ease: [0, 0, 0.2, 1] }}
           className="max-w-[520px] text-[var(--text-secondary)] text-[18px] leading-relaxed mb-4"
         >
-          I design trust into high-stakes decisions.
+          {t("hero.subtitle")}
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -48,7 +51,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.8, ease: [0, 0, 0.2, 1] }}
           className="max-w-[520px] text-[var(--text-secondary)] text-[14px] leading-relaxed mb-10"
         >
-          Four cases. Four types of seeing. This is how I judge.
+          {t("hero.subtitle2")}
         </motion.p>
 
         <motion.div
@@ -61,13 +64,13 @@ export function Hero() {
             href="#work"
             className="rounded-[8px] bg-[var(--accent-brass)] px-6 py-3 text-[14px] font-medium text-white tracking-[0.02em] transition-all duration-200 hover:bg-[var(--accent-brass-hover)] hover:shadow-lg active:scale-[0.98]"
           >
-            View Work
+            {t("hero.cta.work")}
           </a>
           <a
             href="#contact"
             className="rounded-[8px] border border-[var(--accent-brass)] bg-transparent px-6 py-3 text-[14px] font-medium text-[var(--accent-brass)] tracking-[0.02em] transition-all duration-200 hover:bg-[var(--accent-brass-dim)] active:scale-[0.98]"
           >
-            Get in Touch
+            {t("hero.cta.contact")}
           </a>
         </motion.div>
 
@@ -78,7 +81,7 @@ export function Hero() {
           className="flex flex-wrap gap-12 md:gap-16"
         >
           {metrics.map((metric, i) => (
-            <div key={metric.label} className="flex flex-col gap-1">
+            <div key={i} className="flex flex-col gap-1">
               <div
                 className="text-[28px] font-light text-[var(--text-primary)] tracking-tight"
                 style={{ fontFamily: "Georgia, serif" }}

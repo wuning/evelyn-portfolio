@@ -1,8 +1,11 @@
 "use client"
 
 import { SectionReveal } from "@/components/animations/SectionReveal"
+import { useI18n } from "@/lib/i18n"
 
 export function AboutSection() {
+  const { t } = useI18n()
+
   return (
     <section id="about" className="py-[var(--space-section)] px-6 md:px-[120px] bg-[var(--bg-surface)]">
       <div className="mx-auto max-w-[1200px] text-center">
@@ -11,23 +14,23 @@ export function AboutSection() {
             className="text-[20px] md:text-[24px] leading-relaxed text-[var(--text-primary)] max-w-[640px] mx-auto mb-8"
             style={{ fontFamily: "Georgia, serif" }}
           >
-            &ldquo;In an age where AI can draw any interface,
+            {t("about.quote1")}
             <br />
-            I do what AI cannot &mdash;
+            {t("about.quote2")}
             <br />
-            <strong>judge which interface should exist.</strong>&rdquo;
+            <strong>{t("about.quote3")}</strong>
           </blockquote>
         </SectionReveal>
 
         <SectionReveal delay={0.1}>
           <p className="text-[var(--text-secondary)] text-[14px] mb-6">
-            Evelyn Wu &middot; Senior Product Designer &middot; 5+ years fintech &amp; web3
+            {t("about.bio")}
           </p>
           <a
             href="#about-detail"
             className="text-[var(--accent-brass)] text-[14px] font-medium hover:underline transition-colors duration-150"
           >
-            More about me &rarr;
+            {t("about.more")}
           </a>
         </SectionReveal>
       </div>
