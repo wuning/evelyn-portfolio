@@ -448,6 +448,100 @@ const translations: Record<string, Record<Locale, string>> = {
   },
 
   // ═══════════════════════════════════════════════
+  // Resume Section
+  // ═══════════════════════════════════════════════
+
+  "resume.label": { en: "Resume", zh: "履歷" },
+  "resume.download": { en: "Download PDF", zh: "下載 PDF" },
+  "resume.summary": {
+    en: "Product designer with 8+ years of experience building fintech, SaaS, and Web3 products from MVP to mature, revenue-generating platforms. I specialize in designing for high-stakes, irreversible decisions — the moments where judgment matters more than speed. Remote experience with US-based companies across time zones.",
+    zh: "8 年以上經驗的產品設計師，從 MVP 到成熟的營收型平台，專注於金融科技、SaaS 與 Web3 產品。我擅長設計高風險、不可逆的決策——在這些時刻，判斷力比速度更重要。有跨時區與美國公司的遠端合作經驗。",
+  },
+
+  "resume.exp": { en: "Experience", zh: "經歷" },
+
+  "resume.exp1.company": { en: "ExistLive", zh: "ExistLive" },
+  "resume.exp1.role": { en: "Senior Product Designer", zh: "Senior Product Designer" },
+  "resume.exp1.period": { en: "Feb 2024 – Aug 2024 · Remote, US-based", zh: "2024/02 – 2024/08 · 遠端，美國公司" },
+  "resume.exp1.bullets": {
+    en: "Led end-to-end design for a US startup in live music entertainment — mobile app, web platform MVP, and design system. Conducted user research and competitive analysis. Collaborated with remote cross-functional team across time zones.",
+    zh: "主導美國現場音樂新創的端到端設計——行動 App、網頁平台 MVP、設計系統。進行用戶研究與競品分析。跨時區遠端團隊合作。",
+  },
+
+  "resume.exp2.company": { en: "ThunderCore", zh: "ThunderCore" },
+  "resume.exp2.role": { en: "Product Designer", zh: "Product Designer" },
+  "resume.exp2.period": { en: "Feb 2021 – Aug 2023", zh: "2021/02 – 2023/08" },
+  "resume.exp2.bullets": {
+    en: "Designed TT Wallet deposit flow, referral program (+20% MAU), and facilitated cross-functional workshops for ThunderCore Bridge. Led design strategy for growth features and cross-chain financial tools.",
+    zh: "設計 TT Wallet 入金流程、推薦計畫（MAU +20%），主導 ThunderCore Bridge 跨部門工作坊。負責成長功能與跨鏈金融工具的設計策略。",
+  },
+
+  "resume.exp3.company": { en: "BitoGroup", zh: "幣託集團" },
+  "resume.exp3.role": { en: "UI/UX Designer", zh: "UI/UX Designer" },
+  "resume.exp3.period": { en: "2019 – 2021", zh: "2019 – 2021" },
+  "resume.exp3.bullets": {
+    en: "Designed BitoDebt from 0→1 through 3 iterations over 1 year. +34% conversion (22%→56%), 100% sell-out rate, +57% trading volume. Product grew from experiment to 25% of company revenue.",
+    zh: "一年內從零到一設計 BitoDebt，歷經三次迭代。轉換率 +34%（22%→56%），每檔完售，交易量 +57%。從實驗性產品成長為佔公司 25% 營收。",
+  },
+
+  "resume.exp4.company": { en: "IBM", zh: "IBM" },
+  "resume.exp4.role": { en: "UI Developer", zh: "UI Developer" },
+  "resume.exp4.period": { en: "2018", zh: "2018" },
+  "resume.exp4.bullets": {
+    en: "Collaborated with system analysts and engineers to build a large-scale internal system for a major financial institution in Taiwan.",
+    zh: "與系統分析師及工程師合作，為台灣大型金融機構建置內部系統。",
+  },
+
+  "resume.skills": { en: "Skills", zh: "技能" },
+  "resume.skills.design": { en: "Design", zh: "設計" },
+  "resume.skills.design.list": {
+    en: "Figma, Design Systems, Wireframing, Prototyping, Information Architecture, Visual Design",
+    zh: "Figma、設計系統、Wireframing、Prototyping、資訊架構、視覺設計",
+  },
+  "resume.skills.research": { en: "Research", zh: "研究" },
+  "resume.skills.research.list": {
+    en: "User Interviews, Usability Testing, Surveys, Persona Development, Journey Mapping",
+    zh: "用戶訪談、易用性測試、問卷調查、Persona、Journey Mapping",
+  },
+  "resume.skills.data": { en: "Data & Analysis", zh: "數據分析" },
+  "resume.skills.data.list": {
+    en: "Google Analytics, Hotjar Heatmaps, Conversion Funnel Analysis, A/B Testing",
+    zh: "Google Analytics、Hotjar 熱點圖、轉換漏斗分析、A/B Testing",
+  },
+  "resume.skills.facilitation": { en: "Facilitation", zh: "引導" },
+  "resume.skills.facilitation.list": {
+    en: "Cross-functional Workshops, Stakeholder Alignment",
+    zh: "跨部門工作坊、利害關係人對齊",
+  },
+
+  "resume.edu": { en: "Education", zh: "學歷" },
+  "resume.edu.school": {
+    en: "Taipei National University of the Arts",
+    zh: "國立臺北藝術大學",
+  },
+  "resume.edu.dept": {
+    en: "Department of New Media Art · 2010–2015",
+    zh: "新媒體藝術學系 · 2010–2015",
+  },
+
+  "resume.cert": { en: "Certifications", zh: "證照" },
+  "resume.cert.ga": {
+    en: "Google Analytics Individual Qualification (2021)",
+    zh: "Google Analytics 個人認證（2021）",
+  },
+  "resume.cert.ideo": {
+    en: "IDEO — Design Kit: Human-Centered Design (2019)",
+    zh: "IDEO — 以人為本的設計（2019）",
+  },
+
+  "resume.community": { en: "Community", zh: "社群" },
+  "resume.community.ltux": {
+    en: "Ladies that UX — Taipei Director (2021–2022)",
+    zh: "Ladies that UX — 台北分部負責人（2021–2022）",
+  },
+
+
+  // ═══════════════════════════════════════════════
   // Deposit Case Study
   // ═══════════════════════════════════════════════
 
