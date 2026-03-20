@@ -1,83 +1,179 @@
 "use client"
 
 import { SectionReveal } from "@/components/animations/SectionReveal"
-import { CaseCard } from "./CaseCard"
+import { ArrowUpRight } from "lucide-react"
+import { motion } from "framer-motion"
 
 const cases = [
   {
-    title: "BitoDebt 債權認購平台",
-    subtitle: "Bito · 2024",
+    tag: "BITODEBT · FINTECH",
+    saw: "I saw: my blind spot",
+    title: "From experiment\nto market leader",
     description:
-      "設計台灣首個虛擬貨幣債權理財產品。三階段迭代：MVP 簡化 → 視覺敘事建立信任 → 數據驅動優化。",
-    tags: ["fintech", "trust-building", "data-driven"],
+      "My assumption hurt users. I caught it same-day — then grew the product to market leader.",
     metrics: [
-      { label: "Conversion", value: "+34%" },
-      { label: "Transaction Vol.", value: "+57%" },
-      { label: "Order Rate", value: "100%" },
+      { label: "CONVERSION", value: "+34%" },
+      { label: "TRADING VOL.", value: "+57%" },
     ],
     href: "/cases/bitodebt",
+    featured: true,
   },
   {
-    title: "TT Wallet 入金流程",
-    subtitle: "TT Wallet · 2023",
+    tag: "TT WALLET · DEPOSIT",
+    saw: "I saw: past the brief",
+    title: "Reveal before\nthey commit",
     description:
-      "重新設計信用卡購買加密貨幣的流程。放棄問題分流，改為直接展示幣種列表——選擇誠實揭露而非預判式設計。",
-    tags: ["crypto", "ethical-design", "user-protection"],
-    metrics: [
-      { label: "Support Tickets", value: "-23%" },
-      { label: "Conversion", value: "-8%", positive: false },
-      { label: "User Self-correct", value: "+15%" },
-    ],
+      "They asked for an entry point. I redesigned the entire flow.",
+    metrics: [{ label: "SUPPORT TICKETS", value: "−23%" }],
     href: "/cases/deposit",
+    featured: false,
   },
   {
-    title: "TT Wallet Referral",
-    subtitle: "TT Wallet · 2023",
+    tag: "TT WALLET · REFERRAL",
+    saw: "I saw: the timing",
+    title: "Honest over\noptimised",
     description:
-      "設計推薦計畫來拉新用戶。提早揭露獎勵用途，而非用高誘因掩蓋複雜性。上線 2 週後下架——誠實比轉換率重要。",
-    tags: ["growth", "honest-design", "trade-offs"],
-    metrics: [
-      { label: "MAU", value: "+20%" },
-      { label: "Fake Accounts", value: "↓" },
-      { label: "DAU Target", value: "未達", positive: false },
-    ],
+      "Right judgment, wrong timing. I learned when to push and when to wait.",
+    metrics: [{ label: "MAU", value: "+20%" }],
     href: "/cases/referral",
+    featured: false,
   },
   {
-    title: "ThunderCore Bridge",
-    subtitle: "ThunderCore · 2023",
+    tag: "THUNDERCORE · BRIDGE",
+    saw: "I saw: the room",
+    title: "When smooth\nis dangerous",
     description:
-      "團隊想優化跨鏈轉帳介面，但流程太順反而是風險。暫緩介面優化，先重新定義「判斷發生的時刻」。",
-    tags: ["cross-chain", "systems-thinking", "saying-no"],
-    metrics: [
-      { label: "Redefined UX", value: "✓" },
-      { label: "Prevented Risk", value: "✓" },
-      { label: "New UI", value: "∅", positive: false },
-    ],
+      "I paused the project to align the team first — redefining good UX for irreversible flows.",
+    metrics: [{ label: "UX STANDARD", value: "Redefined" }],
     href: "/cases/bridge",
+    featured: false,
   },
 ]
 
+function CaseRow({
+  caseItem,
+  index,
+}: {
+  caseItem: (typeof cases)[0]
+  index: number
+}) {
+  const imageLeft = index % 2 !== 0
+
+  const contentBlock = (
+    <div
+      className={`flex flex-col justify-center p-8 md:p-12 ${
+        caseItem.featured
+          ? "bg-[var(--bg-dark)] text-[var(--bg-primary)] rounded-[12px]"
+          : "bg-[var(--bg-surface)] rounded-[12px]"
+      }`}
+    >
+      <p
+        className="text-[11px] font-medium tracking-[0.15em] uppercase mb-2"
+        style={{ color: "var(--accent-brass)" }}
+      >
+        {caseItem.tag}
+      </p>
+      <p
+        className={`text-[13px] mb-4 ${
+          caseItem.featured
+            ? "text-[var(--accent-deep)]"
+            : "text-[var(--accent-brass)]"
+        }`}
+        style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}
+      >
+        {caseItem.saw}
+      </p>
+      <h3
+        className={`text-[24px] md:text-[28px] leading-tight mb-4 whitespace-pre-line ${
+          caseItem.featured ? "text-[var(--bg-primary)]" : "text-[var(--text-primary)]"
+        }`}
+        style={{ fontFamily: "Georgia, serif" }}
+      >
+        {caseItem.title}
+      </h3>
+      <p
+        className={`text-[14px] leading-relaxed mb-6 ${
+          caseItem.featured ? "text-[#A8A29E]" : "text-[var(--text-secondary)]"
+        }`}
+      >
+        {caseItem.description}
+      </p>
+      <div className="flex flex-wrap gap-8">
+        {caseItem.metrics.map((m) => (
+          <div key={m.label} className="flex flex-col gap-0.5">
+            <span
+              className="text-[20px] font-light tracking-tight"
+              style={{
+                fontFamily: "Georgia, serif",
+                color: caseItem.featured
+                  ? "var(--accent-deep)"
+                  : "var(--accent-brass)",
+              }}
+            >
+              {m.value}
+            </span>
+            <span
+              className={`text-[10px] tracking-[0.1em] uppercase ${
+                caseItem.featured ? "text-[#78716C]" : "text-[var(--text-muted)]"
+              }`}
+            >
+              {m.label}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+
+  const imageBlock = (
+    <div
+      className={`flex items-center justify-center rounded-[12px] min-h-[280px] md:min-h-full ${
+        caseItem.featured ? "bg-[var(--bg-dark-surface)]" : "bg-[var(--bg-surface)]"
+      }`}
+    >
+      <span className="text-[var(--text-muted)] text-[13px]">
+        [ {caseItem.tag.split(" · ")[0]} Preview ]
+      </span>
+    </div>
+  )
+
+  return (
+    <SectionReveal delay={index * 0.1}>
+      <motion.a
+        href={caseItem.href}
+        className="group block"
+        whileHover={{ y: -4 }}
+        transition={{ duration: 0.3 }}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 rounded-[12px] overflow-hidden border border-[var(--border-subtle)] transition-shadow duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.1)]">
+          {imageLeft ? (
+            <>
+              {imageBlock}
+              {contentBlock}
+            </>
+          ) : (
+            <>
+              {contentBlock}
+              {imageBlock}
+            </>
+          )}
+        </div>
+        <div className="flex items-center gap-1 mt-3 text-[var(--accent-brass)] text-[13px] opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <span>Read case study</span>
+          <ArrowUpRight size={14} />
+        </div>
+      </motion.a>
+    </SectionReveal>
+  )
+}
+
 export function WorkSection() {
   return (
-    <section id="work" className="py-[var(--space-section)] px-6">
-      <div className="mx-auto max-w-[1000px]">
-        <SectionReveal>
-          <p className="section-label mb-4">Selected Work</p>
-          <h2 className="mb-4 text-[var(--text-primary)]">
-            每個設計決定都是分岔路
-          </h2>
-          <p className="mb-16 max-w-[520px] text-[var(--text-secondary)] text-[15px] leading-relaxed">
-            在高風險產品中，我選擇誠實、可逆、保護用戶。
-            以下是四個真實的設計選擇——包括 trade-offs。
-          </p>
-        </SectionReveal>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {cases.map((caseItem, i) => (
-            <CaseCard key={caseItem.title} {...caseItem} index={i} />
-          ))}
-        </div>
+    <section id="work" className="py-[var(--space-2xl)] px-6 md:px-[120px]">
+      <div className="mx-auto max-w-[1200px] space-y-6">
+        {cases.map((caseItem, i) => (
+          <CaseRow key={caseItem.tag} caseItem={caseItem} index={i} />
+        ))}
       </div>
     </section>
   )

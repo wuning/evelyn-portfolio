@@ -1,17 +1,19 @@
 import { Hero } from "@/components/sections/Hero"
 import { WorkSection } from "@/components/sections/WorkSection"
-import { QuickQuiz } from "@/components/sections/QuickQuiz"
+import { PhilosophySection } from "@/components/sections/PhilosophySection"
 import { AboutSection } from "@/components/sections/AboutSection"
-import { ContactSection } from "@/components/sections/ContactSection"
+import { ClosingSection } from "@/components/sections/ClosingSection"
+import { Footer } from "@/components/sections/Footer"
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <QuickQuiz />
       <WorkSection />
+      <PhilosophySection />
       <AboutSection />
-      <ContactSection />
+      <ClosingSection />
+      <Footer />
     </>
   )
 }
