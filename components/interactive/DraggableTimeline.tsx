@@ -38,7 +38,7 @@ export function DraggableTimeline({ events, className = "" }: DraggableTimelineP
 
   return (
     <SectionReveal className={className}>
-      <div className="rounded-[16px] border border-[var(--border-subtle)] bg-[var(--bg-card)] p-8">
+      <div className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-8">
         <p className="section-label mb-6 text-center">Timeline</p>
 
         {/* Active event content */}
@@ -51,20 +51,23 @@ export function DraggableTimeline({ events, className = "" }: DraggableTimelineP
             transition={{ duration: 0.4, ease: [0, 0, 0.2, 1] }}
             className="mb-8 min-h-[120px]"
           >
-            <p
-              className="mb-1 font-mono text-[11px] text-[var(--accent-text)] tracking-[0.04em]"
-              style={{ fontFamily: "var(--font-jetbrains)" }}
-            >
+            <p className="mb-1 text-[11px] font-medium tracking-[0.1em] uppercase text-[var(--accent-brass)]">
               {activeEvent.time}
             </p>
-            <h3 className="mb-3 text-[20px] font-semibold tracking-[-0.04em] text-[var(--text-primary)]">
+            <h3
+              className="mb-3 text-[20px] tracking-[-0.02em] text-[var(--text-primary)]"
+              style={{ fontFamily: "Georgia, serif" }}
+            >
               {activeEvent.title}
             </h3>
             <p className="text-[14px] leading-relaxed text-[var(--text-secondary)]">
               {activeEvent.detail}
             </p>
             {activeEvent.insight && (
-              <p className="mt-3 rounded-[8px] bg-[var(--accent-dim)] px-4 py-2 text-[13px] text-[var(--accent-text)] italic">
+              <p
+                className="mt-3 rounded-[8px] bg-[var(--accent-brass-dim)] px-4 py-2 text-[13px] text-[var(--accent-brass)] italic"
+                style={{ fontFamily: "Georgia, serif" }}
+              >
                 &ldquo;{activeEvent.insight}&rdquo;
               </p>
             )}
@@ -82,7 +85,7 @@ export function DraggableTimeline({ events, className = "" }: DraggableTimelineP
             <div className="absolute top-1/2 left-0 right-0 h-[2px] -translate-y-1/2 bg-[var(--border-medium)]">
               {/* Active portion */}
               <motion.div
-                className="absolute top-0 left-0 h-full bg-[var(--accent-blue)]"
+                className="absolute top-0 left-0 h-full bg-[var(--accent-brass)]"
                 animate={{
                   width: `${(activeIndex / (events.length - 1)) * 100}%`,
                 }}
@@ -111,9 +114,9 @@ export function DraggableTimeline({ events, className = "" }: DraggableTimelineP
                   <div
                     className={`rounded-full border-2 transition-all duration-300 ${
                       isActive
-                        ? "h-4 w-4 border-[var(--accent-blue)] bg-[var(--accent-blue)]"
+                        ? "h-4 w-4 border-[var(--accent-brass)] bg-[var(--accent-brass)]"
                         : isPast
-                          ? "h-3 w-3 border-[var(--accent-blue)] bg-[var(--bg-primary)]"
+                          ? "h-3 w-3 border-[var(--accent-brass)] bg-[var(--bg-primary)]"
                           : "h-3 w-3 border-[var(--border-medium)] bg-[var(--bg-primary)]"
                     }`}
                   />
@@ -129,12 +132,12 @@ export function DraggableTimeline({ events, className = "" }: DraggableTimelineP
               return (
                 <span
                   key={event.id}
-                  className={`absolute -translate-x-1/2 text-[9px] tracking-[0.04em] transition-colors duration-300 ${
+                  className={`absolute -translate-x-1/2 text-[9px] tracking-[0.08em] uppercase transition-colors duration-300 ${
                     i === activeIndex
-                      ? "text-[var(--accent-text)] font-medium"
+                      ? "text-[var(--accent-brass)] font-medium"
                       : "text-[var(--text-muted)]"
                   }`}
-                  style={{ left, fontFamily: "var(--font-jetbrains)" }}
+                  style={{ left }}
                 >
                   {event.time}
                 </span>

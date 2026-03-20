@@ -13,7 +13,7 @@ const roads = [
     title: "視覺驅動",
     pros: ["轉換率最高", "視覺衝擊力強", "短期數據好看"],
     cons: ["誇大報酬預期", "吸引投機用戶", "長期信任受損"],
-    accentColor: "var(--color-warning)",
+    accentColor: "var(--text-muted)",
   },
   {
     id: "info",
@@ -30,7 +30,7 @@ const roads = [
     pros: ["提早說清楚用途", "減少虛假帳號", "建立長期信任"],
     cons: ["吸引力相對低", "短期 DAU 不高", "需要更多教育"],
     isEvelyn: true,
-    accentColor: "var(--color-success)",
+    accentColor: "var(--accent-brass)",
   },
 ]
 
@@ -74,27 +74,27 @@ export default function ReferralPage() {
       metrics={[
         { label: "MAU Growth", value: "+20%" },
         { label: "Fake Accounts", value: "↓" },
-        { label: "DAU Target", value: "未達", positive: false },
+        { label: "DAU Target", value: "未達" },
       ]}
       coreInsight="誠實比轉換率重要；在不完美條件下，不誤導就是負責。"
     >
       <CaseScene
-        number={1}
+        label="Scene 01"
         title="背景"
         description="團隊目標：用 Referral 拉新用戶。問題：新用戶在建立信任前就被要求存款。三個設計方向，各有取捨。"
       />
 
       <CaseScene
-        number={2}
+        label="Scene 02"
         title="三條路"
         description="點擊任一條路，看它的優缺點。然後看我選了哪一條。"
-        bg="secondary"
+        bg="surface"
       >
         <ForkRoad roads={roads} />
       </CaseScene>
 
       <CaseScene
-        number={3}
+        label="Scene 03"
         title="上線與下架"
         description="拖動時間軸，看 Referral 從上線到下架的完整過程。"
       >
@@ -102,13 +102,13 @@ export default function ReferralPage() {
       </CaseScene>
 
       <CaseScene
-        number={4}
+        label="Scene 04"
         title="這算失敗嗎？"
-        bg="secondary"
+        bg="surface"
       >
         <SectionReveal>
           <div className="space-y-6">
-            <div className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-card)] p-6">
+            <div className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-6">
               <p className="mb-3 text-[15px] text-[var(--text-primary)]">
                 從數據看——是的。DAU 沒達標，功能被下架。
               </p>
@@ -117,9 +117,9 @@ export default function ReferralPage() {
                 下架時造成的信任傷害會更大。
               </p>
             </div>
-            <div className="rounded-[12px] border border-[var(--border-accent)] bg-[var(--accent-dim)] p-6 text-center">
+            <div className="rounded-[12px] border-l-4 bg-[var(--bg-primary)] p-6 text-center" style={{ borderLeftColor: "var(--accent-brass)" }}>
               <p className="text-[16px] leading-relaxed text-[var(--text-primary)]">
-                「<span className="text-[var(--accent-text)]">誠實比轉換率重要。</span>
+                「<span className="text-[var(--accent-brass)]">誠實比轉換率重要。</span>
                 <br />
                 在不完美條件下，不誤導就是負責。」
               </p>

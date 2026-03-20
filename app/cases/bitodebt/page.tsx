@@ -5,131 +5,453 @@ import { CaseScene } from "@/components/sections/CaseScene"
 import { DraggableTimeline } from "@/components/interactive/DraggableTimeline"
 import { SectionReveal } from "@/components/animations/SectionReveal"
 import { Counter } from "@/components/animations/Counter"
+import { useI18n } from "@/lib/i18n"
 
-const timelineEvents = [
-  {
-    id: "mvp",
-    time: "Phase 1",
-    title: "MVP 簡化上線",
-    detail:
-      "用戶不理解債權概念。我們選擇極簡 MVP——只保留核心購買流程，移除所有非必要資訊，讓用戶先能完成基本操作。",
-    insight: "先讓產品活下來，再慢慢教育市場。",
-  },
-  {
-    id: "visual",
-    time: "Phase 2",
-    title: "視覺敘事建立信任",
-    detail:
-      "加入圖表化到期利率、歷史成效資訊和信任指標。從「能用」進化到「敢用」——用資訊透明度取代行銷說服。",
-    insight: "金融產品中，資訊透明就是最好的行銷。",
-  },
-  {
-    id: "data",
-    time: "Phase 3",
-    title: "數據驅動優化",
-    detail:
-      "追蹤每個步驟的轉換數據，發現支付方式預設選項造成巨大摩擦。快速修正後，訂單轉化率達 100%。",
-    insight: "永遠用數據驗證假設，不要相信設計師的直覺。",
-  },
-  {
-    id: "result",
-    time: "Result",
-    title: "三階段成果",
-    detail:
-      "投資轉換率從 22% 提升到 56%，平台交易額增加 57%。但支付方式的假設錯誤也提醒我們——每個預設選項都可能造成巨大摩擦。",
-    insight: "在金融產品中，「順暢」不等於「快速」，而是「讓用戶有把握」。",
-  },
-]
+function QuoteCard({ quote, author }: { quote: string; author: string }) {
+  return (
+    <div className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-6">
+      <p
+        className="text-[15px] leading-relaxed text-[var(--text-primary)] mb-3"
+        style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}
+      >
+        &ldquo;{quote}&rdquo;
+      </p>
+      <p className="text-[12px] text-[var(--text-muted)]">— {author}</p>
+    </div>
+  )
+}
+
+function OutcomeCard({
+  result,
+  insight,
+  bg = "light",
+}: {
+  result: string
+  insight: string
+  bg?: "light" | "dark"
+}) {
+  const isDark = bg === "dark"
+  return (
+    <SectionReveal>
+      <div
+        className={`rounded-[12px] p-6 mt-8 border ${
+          isDark
+            ? "border-[var(--bg-dark-surface)] bg-[var(--bg-dark-surface)]"
+            : "border-[var(--border-subtle)] bg-[var(--bg-surface)]"
+        }`}
+      >
+        <div className="flex flex-col md:flex-row gap-6">
+          <div className="flex-1">
+            <p
+              className="text-[10px] tracking-[0.1em] uppercase mb-2"
+              style={{ color: "var(--accent-brass)" }}
+            >
+              Result
+            </p>
+            <p
+              className={`text-[15px] leading-relaxed ${
+                isDark ? "text-[var(--bg-primary)]" : "text-[var(--text-primary)]"
+              }`}
+            >
+              {result}
+            </p>
+          </div>
+          <div className="flex-1">
+            <p
+              className="text-[10px] tracking-[0.1em] uppercase mb-2"
+              style={{ color: "var(--accent-brass)" }}
+            >
+              Insight
+            </p>
+            <p
+              className={`text-[14px] leading-relaxed italic ${
+                isDark ? "text-[#A8A29E]" : "text-[var(--text-secondary)]"
+              }`}
+              style={{ fontFamily: "Georgia, serif" }}
+            >
+              {insight}
+            </p>
+          </div>
+        </div>
+      </div>
+    </SectionReveal>
+  )
+}
 
 export default function BitoDebtPage() {
+  const { t } = useI18n()
+
+  const timelineEvents = [
+    {
+      id: "mvp",
+      time: t("bd.tl.phase1"),
+      title: t("bd.tl.phase1.title"),
+      detail: t("bd.tl.phase1.detail"),
+      insight: t("bd.tl.phase1.insight"),
+    },
+    {
+      id: "visual",
+      time: t("bd.tl.phase2"),
+      title: t("bd.tl.phase2.title"),
+      detail: t("bd.tl.phase2.detail"),
+      insight: t("bd.tl.phase2.insight"),
+    },
+    {
+      id: "data",
+      time: t("bd.tl.phase3"),
+      title: t("bd.tl.phase3.title"),
+      detail: t("bd.tl.phase3.detail"),
+      insight: t("bd.tl.phase3.insight"),
+    },
+  ]
+
   return (
     <CaseLayout
-      title="BitoDebt 債權認購平台"
-      subtitle="Bito · 2024"
-      tags={["fintech", "trust-building", "data-driven", "crypto"]}
+      label={t("bd.label")}
+      title={t("bd.title")}
+      subtitle={t("bd.subtitle")}
+      role={t("bd.role")}
+      team={t("bd.team")}
+      duration={t("bd.duration")}
       metrics={[
-        { label: "Conversion Lift", value: "+34%" },
-        { label: "Transaction Vol.", value: "+57%" },
-        { label: "Order Rate", value: "100%" },
+        { label: t("bd.m.conversion"), value: "+34%" },
+        { label: t("bd.m.sellout"), value: "100%" },
+        { label: t("bd.m.trading"), value: "+57%" },
+        { label: t("bd.m.revenue"), value: "25%" },
       ]}
-      coreInsight="在金融產品中，「順暢」不等於「快速」，而是「讓用戶有把握」。永遠用數據驗證假設，不要相信設計師的直覺。"
     >
+      {/* Section 2 — Challenge */}
       <CaseScene
-        number={1}
-        title="問題揭露"
-        description="設計台灣首個虛擬貨幣債權理財產品。用戶不理解「債權」概念——這不是介面問題，而是信任問題。如何讓用戶在不理解的情況下敢投入真金白銀？"
-      />
-
-      <CaseScene
-        number={2}
-        title="三階段迭代"
-        description="我們沒有一次到位，而是分三個階段逐步建立用戶信任。拖動下方時間軸，看每個階段的思考過程。"
-        bg="secondary"
-      >
-        <DraggableTimeline events={timelineEvents} />
-      </CaseScene>
-
-      <CaseScene
-        number={3}
-        title="數據說話"
-        description="支付方式的預設選項假設錯誤，導致用戶抱怨。我們快速修正，驗證了「每個細節都可能造成巨大摩擦」。"
+        label={t("bd.challenge.label")}
+        title={t("bd.challenge.title")}
+        description={t("bd.challenge.desc")}
+        bg="surface"
       >
         <SectionReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { value: 34, suffix: "%", label: "Conversion Lift", sub: "22% → 56%" },
-              { value: 57, suffix: "%", label: "Transaction Volume", sub: "平台交易額增長" },
-              { value: 100, suffix: "%", label: "Order Completion", sub: "訂單轉化率" },
-            ].map((m, i) => (
-              <div
-                key={m.label}
-                className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-card)] p-6 text-center"
-              >
+          <p className="text-[15px] leading-relaxed text-[var(--text-secondary)] mb-8">
+            {t("bd.challenge.body")}
+          </p>
+        </SectionReveal>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+            { quote: t("bd.quote.p8"), author: t("bd.quote.p8.author") },
+            { quote: t("bd.quote.p9"), author: t("bd.quote.p9.author") },
+            { quote: t("bd.quote.p7"), author: t("bd.quote.p7.author") },
+          ].map((q, i) => (
+            <SectionReveal key={i} delay={i * 0.1}>
+              <QuoteCard quote={q.quote} author={q.author} />
+            </SectionReveal>
+          ))}
+        </div>
+      </CaseScene>
+
+      {/* Section 3 — Iteration 01: MVP */}
+      <CaseScene
+        label={t("bd.iter1.label")}
+        title={t("bd.iter1.title")}
+        tag={t("bd.iter1.tag")}
+        description={t("bd.iter1.desc")}
+        bg="dark"
+      >
+        <SectionReveal>
+          <p className="text-[15px] leading-relaxed text-[#A8A29E] mb-6">
+            {t("bd.iter1.body")}
+          </p>
+        </SectionReveal>
+
+        <SectionReveal delay={0.1}>
+          <div className="rounded-[12px] overflow-hidden mb-4">
+            <img
+              src="/images/bitodebt/mvp-wireframe.png"
+              alt="MVP wireframe — subscription flow"
+              className="w-full h-auto"
+            />
+          </div>
+          <p className="text-[12px] text-[#78716C] italic text-center">
+            {t("bd.iter1.caption")}
+          </p>
+        </SectionReveal>
+
+        <OutcomeCard
+          result={t("bd.iter1.result")}
+          insight={t("bd.iter1.insight")}
+          bg="dark"
+        />
+      </CaseScene>
+
+      {/* Section 4 — Iteration 02: Visual Trust */}
+      <CaseScene
+        label={t("bd.iter2.label")}
+        title={t("bd.iter2.title")}
+        tag={t("bd.iter2.tag")}
+        description={t("bd.iter2.desc")}
+        bg="light"
+      >
+        {/* Mood Board + Product Redesign */}
+        <SectionReveal>
+          <div className="rounded-[12px] overflow-hidden mb-3">
+            <img
+              src="/images/bitodebt/trust-moodboard.png"
+              alt="Magic Bean mood board and product homepage redesign"
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="flex justify-between text-[11px] text-[var(--text-muted)] italic mb-8 px-1">
+            <span>{t("bd.iter2.before")}</span>
+            <span>{t("bd.iter2.brand")}</span>
+            <span>{t("bd.iter2.after")}</span>
+          </div>
+        </SectionReveal>
+
+        {/* Brand story callout */}
+        <SectionReveal delay={0.1}>
+          <div
+            className="rounded-[12px] border-l-4 bg-[var(--bg-surface)] p-6"
+            style={{ borderLeftColor: "var(--accent-brass)" }}
+          >
+            <p
+              className="text-[15px] leading-relaxed text-[var(--text-primary)]"
+              style={{ fontFamily: "Georgia, serif" }}
+            >
+              {t("bd.iter2.callout")}
+            </p>
+          </div>
+        </SectionReveal>
+
+        <OutcomeCard
+          result={t("bd.iter2.result")}
+          insight={t("bd.iter2.insight")}
+        />
+      </CaseScene>
+
+      {/* Section 5 — Iteration 03: Wrong Assumption */}
+      <CaseScene
+        label={t("bd.iter3.label")}
+        title={t("bd.iter3.title")}
+        tag={t("bd.iter3.tag")}
+        description={t("bd.iter3.desc")}
+        bg="surface"
+      >
+        {/* Before/After payment UI */}
+        <SectionReveal>
+          <div className="rounded-[12px] overflow-hidden mb-3">
+            <img
+              src="/images/bitodebt/payment-before-after.png"
+              alt="Payment UI before and after: USDT default → BITO default with discount"
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="flex justify-between text-[11px] text-[var(--text-secondary)] italic mb-8 px-1">
+            <span>{t("bd.iter3.before")}</span>
+            <span>{t("bd.iter3.after")}</span>
+          </div>
+        </SectionReveal>
+
+        <SectionReveal delay={0.1}>
+          <p
+            className="text-center text-[14px] text-[var(--accent-brass)] mb-8"
+            style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}
+          >
+            {t("bd.iter3.fix")}
+          </p>
+        </SectionReveal>
+
+        {/* User feedback */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[t("bd.iter3.fb1"), t("bd.iter3.fb2")].map((fb, i) => (
+            <SectionReveal key={i} delay={i * 0.1}>
+              <div className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-5">
+                <p
+                  className="text-[14px] text-[var(--text-primary)] italic"
+                  style={{ fontFamily: "Georgia, serif" }}
+                >
+                  &ldquo;{fb}&rdquo;
+                </p>
+                <p className="text-[11px] text-[var(--text-muted)] mt-2">— Telegram</p>
+              </div>
+            </SectionReveal>
+          ))}
+        </div>
+      </CaseScene>
+
+      {/* Section 6 — Trust Insight */}
+      <CaseScene
+        label={t("bd.trust.label")}
+        title={t("bd.trust.title")}
+        description={t("bd.trust.desc")}
+        bg="dark"
+      >
+        <SectionReveal>
+          <div className="space-y-3 mb-8">
+            {[t("bd.trust.signal1"), t("bd.trust.signal2"), t("bd.trust.signal3")].map(
+              (signal, i) => (
                 <div
-                  className="mb-1 font-mono text-[32px] font-medium text-[var(--accent-text)]"
-                  style={{ fontFamily: "var(--font-jetbrains)" }}
+                  key={i}
+                  className="flex items-start gap-3 text-[15px] text-[#A8A29E]"
+                >
+                  <span
+                    className="text-[var(--accent-deep)] text-[14px] font-medium mt-0.5"
+                    style={{ fontFamily: "Georgia, serif" }}
+                  >
+                    {i + 1}.
+                  </span>
+                  {signal}
+                </div>
+              )
+            )}
+          </div>
+        </SectionReveal>
+
+        {/* Strategy shift table */}
+        <SectionReveal delay={0.1}>
+          <div className="rounded-[12px] bg-[var(--bg-dark-surface)] p-6">
+            <p className="text-[10px] tracking-[0.1em] uppercase text-[var(--accent-deep)] mb-4">
+              {t("bd.trust.shift")}
+            </p>
+            <div className="space-y-4">
+              {[
+                { before: t("bd.trust.s1.before"), after: t("bd.trust.s1.after") },
+                { before: t("bd.trust.s2.before"), after: t("bd.trust.s2.after") },
+                { before: t("bd.trust.s3.before"), after: t("bd.trust.s3.after") },
+              ].map((row, i) => (
+                <div
+                  key={i}
+                  className="grid grid-cols-[1fr_auto_1fr] gap-4 items-center text-[14px]"
+                >
+                  <span className="text-[#78716C] line-through">{row.before}</span>
+                  <span className="text-[var(--accent-deep)]">→</span>
+                  <span className="text-[var(--bg-primary)]">{row.after}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </SectionReveal>
+      </CaseScene>
+
+      {/* Section 7 — Cross-team Collaboration */}
+      <CaseScene
+        label={t("bd.collab.label")}
+        title={t("bd.collab.title")}
+        bg="light"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {[
+            {
+              title: t("bd.collab.legal.title"),
+              body: t("bd.collab.legal.body"),
+            },
+            {
+              title: t("bd.collab.mktg.title"),
+              body: t("bd.collab.mktg.body"),
+            },
+            {
+              title: t("bd.collab.cs.title"),
+              body: t("bd.collab.cs.body"),
+            },
+          ].map((card, i) => (
+            <SectionReveal key={i} delay={i * 0.1}>
+              <div className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-6 h-full">
+                <h4
+                  className="text-[16px] mb-3 text-[var(--text-primary)]"
+                  style={{ fontFamily: "Georgia, serif" }}
+                >
+                  {card.title}
+                </h4>
+                <p className="text-[14px] leading-relaxed text-[var(--text-secondary)]">
+                  {card.body}
+                </p>
+              </div>
+            </SectionReveal>
+          ))}
+        </div>
+      </CaseScene>
+
+      {/* Section 8 — Results */}
+      <CaseScene
+        label={t("bd.results.label")}
+        title={t("bd.results.title")}
+        bg="dark"
+      >
+        <SectionReveal>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            {[
+              { value: 34, suffix: "%", label: t("bd.m.conversion"), sub: "22% → 56%" },
+              { value: 100, suffix: "%", label: t("bd.m.sellout"), sub: t("bd.results.sellout.sub") },
+              { value: 57, suffix: "%", label: t("bd.m.trading"), sub: t("bd.results.trading.sub") },
+              { value: 25, suffix: "%", label: t("bd.m.revenue"), sub: t("bd.results.revenue.sub") },
+            ].map((m, i) => (
+              <div key={m.label} className="text-center">
+                <div
+                  className="text-[32px] mb-1"
+                  style={{ fontFamily: "Georgia, serif", color: "var(--accent-deep)" }}
                 >
                   <Counter value={m.value} suffix={m.suffix} duration={1500 + i * 200} />
                 </div>
-                <p className="text-[12px] font-medium text-[var(--text-primary)]">
+                <p className="text-[11px] tracking-[0.08em] uppercase text-[var(--bg-primary)] mb-0.5">
                   {m.label}
                 </p>
-                <p className="text-[11px] text-[var(--text-muted)]">{m.sub}</p>
+                <p className="text-[11px] text-[#78716C]">{m.sub}</p>
               </div>
             ))}
           </div>
         </SectionReveal>
-      </CaseScene>
 
-      <CaseScene
-        number={4}
-        title="Trade-offs 與反思"
-        bg="secondary"
-      >
-        <SectionReveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-card)] p-6">
-              <p className="mb-3 text-[11px] font-medium tracking-[0.08em] uppercase text-[var(--color-success)]">
-                What Worked
-              </p>
-              <ul className="space-y-2 text-[14px] text-[var(--text-secondary)]">
-                <li>✓ 三階段迭代有效建立信任</li>
-                <li>✓ 數據驅動找到真正痛點</li>
-                <li>✓ 訂單轉化率達 100%</li>
-              </ul>
-            </div>
-            <div className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-card)] p-6">
-              <p className="mb-3 text-[11px] font-medium tracking-[0.08em] uppercase text-[var(--color-danger)]">
-                What I Learned
-              </p>
-              <ul className="space-y-2 text-[14px] text-[var(--text-secondary)]">
-                <li>✗ 支付方式假設錯誤導致用戶抱怨</li>
-                <li>✗ 預設選項的影響力被低估</li>
-                <li>→ 每個細節都需要數據驗證</li>
-              </ul>
-            </div>
+        {/* Final product page */}
+        <SectionReveal delay={0.1}>
+          <div className="rounded-[12px] overflow-hidden mb-4">
+            <img
+              src="/images/bitodebt/product-final.png"
+              alt="Final BitoDebt product page with FAQ, user testimonials and media coverage"
+              className="w-full h-auto"
+            />
+          </div>
+          <p className="text-[12px] text-[#78716C] italic text-center mb-10">
+            {t("bd.results.final.caption")}
+          </p>
+        </SectionReveal>
+
+        {/* User testimonial */}
+        <SectionReveal delay={0.3}>
+          <div className="max-w-[640px] mx-auto text-center">
+            <p
+              className="text-[18px] leading-relaxed text-[var(--bg-primary)] mb-4"
+              style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}
+            >
+              &ldquo;{t("bd.results.testimonial")}&rdquo;
+            </p>
+            <p className="text-[13px] text-[#78716C]">— Bob, {t("bd.results.testimonial.author")}</p>
           </div>
         </SectionReveal>
+      </CaseScene>
+
+      {/* Section 9 — Reflections */}
+      <CaseScene
+        label={t("bd.reflect.label")}
+        title={t("bd.reflect.title")}
+        bg="surface"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {[
+            { title: t("bd.reflect.1.title"), body: t("bd.reflect.1.body") },
+            { title: t("bd.reflect.2.title"), body: t("bd.reflect.2.body") },
+            { title: t("bd.reflect.3.title"), body: t("bd.reflect.3.body") },
+            { title: t("bd.reflect.4.title"), body: t("bd.reflect.4.body") },
+          ].map((card, i) => (
+            <SectionReveal key={i} delay={i * 0.1}>
+              <div className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-6 h-full">
+                <h4
+                  className="text-[16px] mb-3 text-[var(--text-primary)]"
+                  style={{ fontFamily: "Georgia, serif" }}
+                >
+                  {card.title}
+                </h4>
+                <p className="text-[14px] leading-relaxed text-[var(--text-secondary)]">
+                  {card.body}
+                </p>
+              </div>
+            </SectionReveal>
+          ))}
+        </div>
       </CaseScene>
     </CaseLayout>
   )

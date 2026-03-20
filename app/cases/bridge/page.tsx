@@ -56,22 +56,22 @@ export default function BridgePage() {
       coreInsight="有時候最重要的設計決策是「現在不該做什麼」。設計師的工作不只是畫圖。"
     >
       <CaseScene
-        number={1}
+        label="Scene 01"
         title="初始需求"
         description="團隊想優化跨鏈轉帳介面——「看起來更現代」。這是一個 UI 升級的需求。但我察覺到更深層的問題。"
       />
 
       <CaseScene
-        number={2}
+        label="Scene 02"
         title="我察覺的問題"
         description="拖動時間軸，看我從「接到需求」到「達成共識」的完整思考過程。每個時間點都有一個關鍵轉折。"
-        bg="secondary"
+        bg="surface"
       >
         <DraggableTimeline events={timelineEvents} />
       </CaseScene>
 
       <CaseScene
-        number={3}
+        label="Scene 03"
         title="工作坊設計"
         description="我如何讓團隊看見問題？不是說服，而是引導發現。"
       >
@@ -96,11 +96,10 @@ export default function BridgePage() {
             ].map((item) => (
               <div
                 key={item.step}
-                className="flex gap-4 rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-card)] p-5"
+                className="flex gap-4 rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-surface)] p-5"
               >
                 <span
-                  className="mt-0.5 font-mono text-[13px] font-medium text-[var(--accent-text)]"
-                  style={{ fontFamily: "var(--font-jetbrains)" }}
+                  className="mt-0.5 text-[13px] font-medium text-[var(--accent-brass)]"
                 >
                   {item.step}
                 </span>
@@ -119,15 +118,15 @@ export default function BridgePage() {
       </CaseScene>
 
       <CaseScene
-        number={4}
+        label="Scene 04"
         title="反思"
-        bg="secondary"
+        bg="surface"
       >
         <SectionReveal>
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-card)] p-6">
-                <p className="mb-3 text-[11px] font-medium tracking-[0.08em] uppercase text-[var(--color-success)]">
+              <div className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-6">
+                <p className="mb-3 text-[11px] font-medium tracking-[0.08em] uppercase text-[var(--accent-brass)]">
                   What We Achieved
                 </p>
                 <ul className="space-y-2 text-[14px] text-[var(--text-secondary)]">
@@ -136,8 +135,8 @@ export default function BridgePage() {
                   <li>✓ 建立了設計決策的新框架</li>
                 </ul>
               </div>
-              <div className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-card)] p-6">
-                <p className="mb-3 text-[11px] font-medium tracking-[0.08em] uppercase text-[var(--color-danger)]">
+              <div className="rounded-[12px] border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-6">
+                <p className="mb-3 text-[11px] font-medium tracking-[0.08em] uppercase text-[var(--text-muted)]">
                   What We Didn&apos;t Ship
                 </p>
                 <ul className="space-y-2 text-[14px] text-[var(--text-secondary)]">
@@ -147,9 +146,9 @@ export default function BridgePage() {
                 </ul>
               </div>
             </div>
-            <div className="rounded-[12px] border border-[var(--border-accent)] bg-[var(--accent-dim)] p-6 text-center">
+            <div className="rounded-[12px] border-l-4 bg-[var(--bg-primary)] p-6 text-center" style={{ borderLeftColor: "var(--accent-brass)" }}>
               <p className="text-[16px] leading-relaxed text-[var(--text-primary)]">
-                「<span className="text-[var(--accent-text)]">設計師的工作不只是畫圖。</span>
+                「<span className="text-[var(--accent-brass)]">設計師的工作不只是畫圖。</span>
                 <br />
                 有時候最重要的決策是『不做什麼』。」
               </p>
