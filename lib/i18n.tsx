@@ -447,6 +447,255 @@ const translations: Record<string, Record<Locale, string>> = {
     zh: "魔豆概念不在任何人的 brief 裡。我看到需求、自己做了、然後交給行銷延伸。",
   },
 
+  // ═══════════════════════════════════════════════
+  // Deposit Case Study
+  // ═══════════════════════════════════════════════
+
+  // Deposit — Hero
+  "dp.label": { en: "TT Wallet · Mobile App · 2021–2023", zh: "TT Wallet · 行動 App · 2021–2023" },
+  "dp.title": {
+    en: "They asked for an entry point. I delivered an information architecture.",
+    zh: "他們要我加一個入口。我交付了一套資訊架構。",
+  },
+  "dp.subtitle": {
+    en: "I received a feature request to add a credit card payment entry. I discovered the real problem was a broken deposit flow architecture — and redesigned the entire system.",
+    zh: "我接到「串接刷卡服務，加一個入口」的需求。我發現真正的問題是入金流程的資訊架構混亂——然後重新設計了整個系統。",
+  },
+  "dp.role": {
+    en: "Product Designer — Research, Strategy, UI/UX, Flow Design",
+    zh: "Product Designer — 研究、策略、UI/UX、流程設計",
+  },
+  "dp.team": { en: "Product, Engineering, Marketing", zh: "產品、工程、行銷" },
+  "dp.duration": { en: "2021–2023", zh: "2021–2023" },
+  "dp.m.reframe": { en: "PROBLEM REFRAMING", zh: "問題重構" },
+  "dp.m.architecture": { en: "ARCHITECTURE ADOPTED", zh: "架構沿用" },
+  "dp.m.data": { en: "QUANTIFIED DATA", zh: "量化數據" },
+
+  // Deposit — The Brief
+  "dp.brief.label": { en: "The Brief", zh: "我接到的需求" },
+  "dp.brief.title": {
+    en: "\"Add a credit card entry point.\"",
+    zh: "「串接刷卡服務，加一個入口。」",
+  },
+  "dp.brief.desc": {
+    en: "The task seemed straightforward: integrate a third-party credit card service and add an entry point to the wallet. On the surface, a one-day feature request.",
+    zh: "任務看起來很直接：串接第三方刷卡服務，加一個入口。表面上，這是一天的工作。",
+  },
+  "dp.brief.quote": {
+    en: "Let TT Wallet users buy crypto with credit cards, and clean up the deposit entry points.",
+    zh: "讓 TT Wallet 使用者能用信用卡買到加密貨幣，同時把錢包裡的入金入口整理乾淨。",
+  },
+
+  // Deposit — Real Problem
+  "dp.problem.label": { en: "What I Actually Saw", zh: "我看到的真正問題" },
+  "dp.problem.title": {
+    en: "It's not about missing entry points — the architecture is creating confusion.",
+    zh: "不是入口不夠，是架構在製造混亂。",
+  },
+  "dp.problem.desc": {
+    en: "When I examined the existing user paths, I found the real issue hidden behind \"clean up entry points\":",
+    zh: "當我開始檢視現有的使用路徑時，我發現「整理入口」背後藏著一個資訊架構問題：",
+  },
+  "dp.problem.p1": {
+    en: "Users confused Deposit (transfer existing crypto), Buy Crypto (credit card purchase), and Receive (accept transfers)",
+    zh: "使用者搞混 Deposit（轉入已有的幣）、Buy Crypto（刷卡買幣）、Receive（接收轉帳）",
+  },
+  "dp.problem.p2": {
+    en: "Entry point locations, naming, and user mental models were completely misaligned",
+    zh: "這三個功能在錢包裡的入口位置、命名、和使用者的心智模型完全對不上",
+  },
+  "dp.problem.p3": {
+    en: "Once users took the wrong path, the next step was a credit card payment or an external wallet transfer — irreversible",
+    zh: "一旦走錯，後面就是刷卡付款或從外部錢包發送交易——不可逆",
+  },
+  "dp.problem.callout": {
+    en: "If I just \"add an entry point,\" I'm adding complexity to an already chaotic architecture, making the problem worse.",
+    zh: "如果我只是「加一個入口」，等於在一個已經混亂的架構上再加一個選項，讓問題更嚴重。",
+  },
+  "dp.problem.reframe": {
+    en: "I proposed to the team: this isn't an \"add entry point\" problem — it's an \"the deposit flow's information architecture needs a redesign\" problem. The team agreed to let me redefine the design scope.",
+    zh: "我向團隊提出：這不是「加入口」的問題，是「入金流程的資訊架構需要重設計」的問題。團隊同意讓我重新定義設計範圍。",
+  },
+
+  // Deposit — v0 Design
+  "dp.v0.label": { en: "First Instinct (v0)", zh: "第一版設計（v0）" },
+  "dp.v0.title": {
+    en: "It looked smart. I killed it myself.",
+    zh: "看起來很聰明。我自己推翻了它。",
+  },
+  "dp.v0.tag": {
+    en: "Judgment: Overturn your own design when the assumption fails.",
+    zh: "判斷：當假設不成立，推翻自己的設計。",
+  },
+  "dp.v0.desc": {
+    en: "My first instinct: since users can't tell which function they need, just ask them.",
+    zh: "我的第一直覺：既然使用者搞不清楚自己要用哪個功能，那就先問他。",
+  },
+  "dp.v0.design": {
+    en: "v0: Ask \"Do you have crypto?\" at the start of the deposit flow → branch to Transfer or Credit Card flow.",
+    zh: "v0：在 Deposit 流程開頭先問使用者「你有幣嗎？」→ 分流到轉帳或刷卡流程。",
+  },
+  "dp.v0.assumption": {
+    en: "Assumption: users can accurately describe their own state — the product just needs to ask the right question.",
+    zh: "背後的假設：使用者能清楚描述自己的狀態，產品只要問對問題，就能幫他走到正確的路。",
+  },
+  "dp.v0.flaw.title": { en: "Why I killed v0", zh: "為什麼我推翻了 v0" },
+  "dp.v0.flaw.body": {
+    en: "Different people interpret \"Do you have crypto?\" completely differently:",
+    zh: "不同人對「我有沒有 crypto」的理解完全不同——",
+  },
+  "dp.v0.flaw1": {
+    en: "Some think: \"Do I have crypto in TT Wallet?\"",
+    zh: "有人理解成「在 TT Wallet 裡有沒有」",
+  },
+  "dp.v0.flaw2": {
+    en: "Some think: \"Have I ever owned crypto in my life?\"",
+    zh: "有人理解成「我人生中有沒有」",
+  },
+  "dp.v0.flaw3": {
+    en: "Some aren't sure if they still have any",
+    zh: "有些人不確定自己還有沒有幣",
+  },
+  "dp.v0.flaw4": {
+    en: "Some only remember when they see a token name from another exchange",
+    zh: "有些人是看到幣名，才想起自己在某個交易所還有",
+  },
+  "dp.v0.flaw.insight": {
+    en: "v0 wasn't helping users choose — it was forcing them to make a judgment they couldn't reliably make, then locking them into a potentially wrong path.",
+    zh: "我的 v0 設計不是在幫使用者分類——而是在要求他先做出一個他不一定能回答的判斷，然後把他鎖進一條可能是錯的路。",
+  },
+  "dp.v0.table.before": {
+    en: "Users don't know which entry to take",
+    zh: "使用者不知道該走哪個入口",
+  },
+  "dp.v0.table.after": {
+    en: "Users lack sufficient context to judge their own state before choosing",
+    zh: "使用者在做出選擇前，缺乏足夠的脈絡來判斷自己的狀態",
+  },
+  "dp.v0.table.before2": {
+    en: "Need a classification mechanism",
+    zh: "需要一個分類機制",
+  },
+  "dp.v0.table.after2": {
+    en: "Need an architecture that lets users \"see\" their own state",
+    zh: "需要一個讓使用者自己「看見」自己狀態的架構",
+  },
+
+  // Deposit — Final Design
+  "dp.final.label": { en: "Final Design", zh: "最終設計" },
+  "dp.final.title": {
+    en: "Let users see reality — don't classify them.",
+    zh: "讓使用者看見現實，而不是替他歸類。",
+  },
+  "dp.final.desc": {
+    en: "After killing v0, I redesigned the entire deposit flow architecture based on three principles.",
+    zh: "推翻 v0 之後，我重新設計了整個入金流程的架構，基於三個原則。",
+  },
+  "dp.final.p1.title": {
+    en: "Side by side, no recommendation",
+    zh: "並列，不推薦",
+  },
+  "dp.final.p1.body": {
+    en: "Deposit and Buy Crypto coexist as equals, switchable at any time. No visual recommendation, no Next Best Action, no default path. The system can't know the user's asset situation better than they do.",
+    zh: "Deposit 與 Buy Crypto 並列存在，允許隨時切換。沒有視覺推薦、沒有 Next Best Action、沒有預設路徑。系統不可能比使用者更了解他自己的資產狀況。",
+  },
+  "dp.final.p1.caption": {
+    en: "v0 vs Final: avoiding visual recommendation — intentional equal weight",
+    zh: "v0 vs Final：避免視覺推薦——刻意平等權重",
+  },
+  "dp.final.p2.title": {
+    en: "Concrete options over abstract questions",
+    zh: "用具體選項取代抽象問題",
+  },
+  "dp.final.p2.body": {
+    en: "Instead of asking \"Do you have crypto?\", directly show the supported token list. Users identify their own state through concrete options: which tokens they recognize, which they actually hold, which are currently unavailable.",
+    zh: "不再問「你有沒有幣」，而是直接展示系統支援的幣種列表。讓使用者透過具體選項來辨識自己的狀態：哪些幣他熟悉、哪些他其實還有、哪些目前不可用。",
+  },
+  "dp.final.p2.insight": {
+    en: "This was the core shift from v0 to Final: from \"asking users who they are\" to \"showing reality so users recognize themselves.\"",
+    zh: "這是 v0 到 Final 最核心的轉變：從「問使用者他是誰」變成「展示現實讓使用者自己認出自己」。",
+  },
+  "dp.final.p3.title": {
+    en: "Delayed commitment — fully reversible until the last step",
+    zh: "延遲承諾——全程可逆，直到最後一步",
+  },
+  "dp.final.p3.body": {
+    en: "After entering the deposit flow, users can still switch between Buy and Deposit. Token and Network choices remain reversible. Only the final step (\"Pay Now\") triggers an irreversible action.",
+    zh: "進入 Deposit 流程後，仍可切換 Buy / Deposit。Token 與 Network 的選擇仍可返回。只有在最後一步（「立即支付」）才進入不可逆行為。",
+  },
+  "dp.final.p3.caption": {
+    en: "Full flow: no payment yet (reversible) → user control (step back) → payment confirmed (irreversible)",
+    zh: "完整流程：尚未付款（可逆）→ 使用者控制（可返回）→ 確認付款（不可逆）",
+  },
+
+  // Deposit — Architecture Comparison
+  "dp.arch.label": { en: "Architecture Comparison", zh: "架構對比" },
+  "dp.arch.title": {
+    en: "From high-risk pipeline to safe exploration zone.",
+    zh: "從高風險管道到安全探索區。",
+  },
+  "dp.arch.desc": {
+    en: "v0 required users to make a judgment before seeing their asset reality — one wrong call cascades into irreversible consequences. The Final design turns every choice into reversible exploration — users can always go back until they press \"Pay Now.\"",
+    zh: "v0 要求使用者在看見資產現狀前就做判斷，一旦錯誤就是連鎖反應。Final 把所有選擇都變成可逆的探索——使用者在按下「立即支付」前，始終可以回頭。",
+  },
+  "dp.arch.v0": { en: "v0 Architecture: High Risk", zh: "v0 架構：高風險" },
+  "dp.arch.final": { en: "Final Architecture: Safe Buffer Zone", zh: "最終架構：安全緩衝區" },
+
+  // Deposit — Honest Disclosure
+  "dp.honest.label": { en: "Honest Disclosure", zh: "誠實揭露" },
+  "dp.honest.title": {
+    en: "This case has no quantified outcome data.",
+    zh: "這個案例沒有最終的量化數據。",
+  },
+  "dp.honest.body": {
+    en: "I did not obtain production environment data during the tracking phase due to organizational resource allocation changes. The architecture logic was adopted in subsequent versions, indicating team alignment with this design direction. But I cannot provide conversion rate or support ticket before/after numbers.",
+    zh: "在專案推行後的追蹤階段，因為組織資源調度，我未能取得生產環境的數據。此架構邏輯沿用至後續版本，代表團隊認同這個設計方向。但我無法提供轉換率或客服案件量的 before/after 數字。",
+  },
+  "dp.honest.what": { en: "What I Delivered", zh: "我交付了什麼" },
+  "dp.honest.w1": {
+    en: "Redesigned the entire deposit flow information architecture",
+    zh: "重新設計入金流程的資訊架構",
+  },
+  "dp.honest.w2": {
+    en: "Established \"side by side + concrete options + delayed commitment\" framework",
+    zh: "建立「並列不推薦 + 具體選項取代抽象問題 + 延遲承諾」的架構原則",
+  },
+  "dp.honest.w3": {
+    en: "Architecture adopted in subsequent versions",
+    zh: "此架構沿用至後續版本",
+  },
+
+  // Deposit — Reflections
+  "dp.reflect.label": { en: "Reflections", zh: "反思" },
+  "dp.reflect.title": {
+    en: "Three things I learned from reframing a brief.",
+    zh: "重新定義需求，我學到的三件事。",
+  },
+  "dp.reflect.1.title": {
+    en: "Feature requests often hide architecture problems.",
+    zh: "功能需求的背後經常藏著架構問題。",
+  },
+  "dp.reflect.1.body": {
+    en: "\"Add an entry point\" looked like a one-day job. But if I had only added an entry, I'd be stacking complexity onto an already chaotic architecture. A senior designer's value isn't executing faster — it's recognizing \"this brief is asking the wrong question\" before executing.",
+    zh: "「加一個入口」看起來是一天的工作。但如果我真的只加了一個入口，等於在一個已經混亂的架構上疊加複雜度。Senior designer 的價值不是執行得更快，而是在執行前辨識出「這個 brief 問錯了問題」。",
+  },
+  "dp.reflect.2.title": {
+    en: "Overturning your own design is harder than overturning someone else's — but more valuable.",
+    zh: "推翻自己的設計，比推翻別人的更難——但更值得。",
+  },
+  "dp.reflect.2.body": {
+    en: "v0 was my own design, and it was logically sound. Killing it meant admitting \"my first instinct was wrong.\" But if I had stuck with v0 due to sunk cost, users would pay for my ego.",
+    zh: "v0 是我自己做的設計，邏輯上也說得通。推翻它需要承認「我的第一直覺是錯的」。但如果我因為沉沒成本而堅持 v0，使用者要為我的面子買單。",
+  },
+  "dp.reflect.3.title": {
+    en: "\"The system doesn't know the user's state\" is an architecture decision.",
+    zh: "承認「系統不知道使用者的狀態」，是一個架構決策。",
+  },
+  "dp.reflect.3.body": {
+    en: "v0's failure taught me: the system can't know the user's asset situation better than they do. This isn't a UI decision (whether to ask a question) — it's an architecture decision (whether the system should assume it knows who the user is). Choosing \"don't assume\" reshapes the entire flow structure.",
+    zh: "v0 的失敗讓我理解：系統不可能比使用者更了解他自己的資產狀況。這不是一個 UI 決定（要不要問問題），而是一個架構決定（系統是否應該假設自己知道使用者是誰）。選擇「不假設」，會連帶影響整個流程的結構。",
+  },
+
   // BitoDebt — Timeline
   "bd.tl.phase1": { en: "Phase 1", zh: "第一階段" },
   "bd.tl.phase1.title": { en: "MVP — Ship First", zh: "MVP 簡化上線" },
