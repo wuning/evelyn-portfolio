@@ -27,7 +27,7 @@ export function AboutSection() {
             {t("about.bio")}
           </p>
           <a
-            href="#about-detail"
+            href="/about"
             className="text-[var(--accent-brass)] text-[14px] font-medium hover:underline transition-colors duration-150"
           >
             {t("about.more")}

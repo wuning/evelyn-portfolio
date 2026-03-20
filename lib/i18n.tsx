@@ -448,6 +448,127 @@ const translations: Record<string, Record<Locale, string>> = {
   },
 
   // ═══════════════════════════════════════════════
+  // About Page
+  // ═══════════════════════════════════════════════
+
+  "about.page.label": { en: "About", zh: "關於我" },
+  "about.page.title": {
+    en: "I walk the trail first.",
+    zh: "出發之前，我會先自己走一遍。",
+  },
+  "about.page.subtitle": {
+    en: "Like taking kids hiking — I scout the steep sections, the rest stops, and the retreat points before anyone else steps on the path.",
+    zh: "就像帶小孩去爬山——我會先找到太陡的路段、休息點、和撤退路線，然後才讓其他人上路。",
+  },
+
+  // Climbing metaphor
+  "about.climb.label": { en: "The Hiking Metaphor", zh: "爬山隱喻" },
+  "about.climb.title": {
+    en: "Design is route-finding, not decorating.",
+    zh: "設計是找路，不是裝飾。",
+  },
+  "about.climb.p1": {
+    en: "Every product decision is a fork in the trail. Some paths look smooth but lead to cliffs. Some look rough but get you to the summit safely.",
+    zh: "每個產品決策都是步道上的分岔路。有些路看起來平坦，但通往懸崖。有些路看起來崎嶇，但能安全到達山頂。",
+  },
+  "about.climb.p2": {
+    en: "My job isn't to make the trail feel effortless. It's to make sure everyone reaches the top — informed, prepared, and without losing anything along the way.",
+    zh: "我的工作不是讓步道感覺毫不費力。而是確保每個人都能到達山頂——知情的、有準備的、路上不會損失任何東西。",
+  },
+  "about.climb.steep": { en: "Too steep", zh: "太陡" },
+  "about.climb.rest": { en: "Rest stop", zh: "休息點" },
+  "about.climb.retreat": { en: "Retreat point", zh: "撤退點" },
+  "about.climb.summit": { en: "Summit", zh: "山頂" },
+
+  // Philosophy pillars
+  "about.phil.label": { en: "How I Design", zh: "我怎麼做設計" },
+  "about.phil.title": {
+    en: "Explore. Decide. Own.",
+    zh: "探索。決策。承擔。",
+  },
+  "about.explore.title": { en: "Explore", zh: "探索" },
+  "about.explore.body": {
+    en: "I don't start with solutions. I map the terrain — user interviews, data, edge cases, stakeholder constraints. The goal isn't to find the right answer. It's to see the full landscape before choosing a direction.",
+    zh: "我不從解決方案開始。我先測量地形——用戶訪談、數據、邊界情境、利害關係人的限制。目標不是找到正確答案，而是在選擇方向之前看見完整的地貌。",
+  },
+  "about.decide.title": { en: "Decide", zh: "決策" },
+  "about.decide.body": {
+    en: "Every design involves trade-offs. I make them explicit — what we gain, what we lose, and why this path is worth the cost. I'd rather defend a deliberate choice than ship a default nobody questioned.",
+    zh: "每個設計都涉及取捨。我把它們說清楚——我們得到什麼、失去什麼、為什麼這條路值得付出代價。比起交付一個沒人質疑過的預設值，我更願意為一個深思熟慮的選擇辯護。",
+  },
+  "about.own.title": { en: "Own", zh: "承擔" },
+  "about.own.body": {
+    en: "I stay with the consequences. When my assumption hurts users, I fix it same-day. When the data says my design was wrong, I say it first. Ownership isn't credit — it's accountability.",
+    zh: "我會留下來面對結果。當我的假設傷害了用戶，我當天修正。當數據說我的設計是錯的，我第一個承認。Ownership 不是功勞——是責任。",
+  },
+
+  // AI section
+  "about.ai.label": { en: "How I Use AI", zh: "我怎麼用 AI" },
+  "about.ai.title": {
+    en: "AI is my thinking partner. Decisions are mine.",
+    zh: "AI 是我的思考夥伴。決策是我做的。",
+  },
+  "about.ai.body": {
+    en: "In an age where AI can generate any interface, I do what AI cannot — judge which interface should exist.",
+    zh: "在 AI 能畫出任何介面的時代，我做的是 AI 做不到的事——判斷哪個介面不該存在。",
+  },
+  "about.ai.1": {
+    en: "Analyze user interview transcripts for patterns",
+    zh: "分析用戶訪談逐字稿，找出模式",
+  },
+  "about.ai.2": {
+    en: "Generate edge cases and stress-test assumptions",
+    zh: "產生邊界情境，壓力測試假設",
+  },
+  "about.ai.3": {
+    en: "Rapidly explore multiple visual directions",
+    zh: "快速探索多種視覺方向",
+  },
+  "about.ai.4": {
+    en: "But every final decision goes through my judgment",
+    zh: "但每一個最終決策，都經過我的判斷",
+  },
+
+  // Journey
+  "about.journey.label": { en: "My Path", zh: "我的路徑" },
+  "about.journey.title": {
+    en: "From new media art to high-stakes product design.",
+    zh: "從新媒體藝術到高風險產品設計。",
+  },
+  "about.journey.1.title": { en: "Art School", zh: "藝術學院" },
+  "about.journey.1.body": {
+    en: "Taipei National University of the Arts, New Media Art. Learned to think in systems, question assumptions, and create experiences — not just interfaces.",
+    zh: "台北藝術大學，新媒體藝術學系。學會用系統思考、質疑假設、創造體驗——不只是介面。",
+  },
+  "about.journey.2.title": { en: "Enterprise → Crypto", zh: "企業 → 加密貨幣" },
+  "about.journey.2.body": {
+    en: "IBM taught me engineering constraints. Crypto taught me what happens when design fails in irreversible systems — real money, real consequences.",
+    zh: "IBM 教會我工程限制。加密貨幣教會我當設計在不可逆系統中失敗會發生什麼——真金白銀、真實後果。",
+  },
+  "about.journey.3.title": { en: "Design Ownership", zh: "Design Ownership" },
+  "about.journey.3.body": {
+    en: "At BitoGroup and ThunderCore, I learned that the designer's job isn't just to draw — it's to see the gap and fill it, even when nobody asked.",
+    zh: "在幣託和 ThunderCore，我學到設計師的工作不只是畫圖——是看見缺口，然後補上去，即使沒有人要求。",
+  },
+  "about.journey.4.title": { en: "Remote & Global", zh: "遠端 & 全球" },
+  "about.journey.4.body": {
+    en: "ExistLive — my first US-based remote role. Proved I can lead design across time zones, ship independently, and communicate async.",
+    zh: "ExistLive——我第一個美國公司的遠端職位。證明我能跨時區主導設計、獨立交付、非同步溝通。",
+  },
+
+  // Closing
+  "about.closing": {
+    en: "My name is Evelyn, and this is how I design —",
+    zh: "我叫 Evelyn，這是我做設計的方式——",
+  },
+  "about.closing.slogan": {
+    en: "See the risk before the click.",
+    zh: "在點擊之前，看見風險。",
+  },
+  "about.cta.work": { en: "View my work", zh: "查看我的作品" },
+  "about.cta.contact": { en: "Get in touch", zh: "聯繫我" },
+
+  // ═══════════════════════════════════════════════
   // Resume Section
   // ═══════════════════════════════════════════════
 
@@ -539,7 +660,6 @@ const translations: Record<string, Record<Locale, string>> = {
     en: "Ladies that UX — Taipei Director (2021–2022)",
     zh: "Ladies that UX — 台北分部負責人（2021–2022）",
   },
-
 
   // ═══════════════════════════════════════════════
   // Deposit Case Study

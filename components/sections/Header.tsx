@@ -12,8 +12,8 @@ export function Header() {
 
   const navItems = [
     { label: t("nav.work"), href: "#work" },
-    { label: t("nav.about"), href: "#about" },
-    { label: t("nav.resume"), href: "#resume" },
+    { label: t("nav.about"), href: "/about" },
+    { label: t("nav.resume"), href: "/#resume" },
   ]
 
   useEffect(() => {
