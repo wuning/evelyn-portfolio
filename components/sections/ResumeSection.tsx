@@ -187,9 +187,10 @@ export function ResumeSection() {
             </div>
             <div>
               <p className="section-label mb-3">{t("resume.community")}</p>
-              <p className="text-[13px] text-[var(--text-secondary)]">
-                {t("resume.community.ltux")}
-              </p>
+              <div className="space-y-3 text-[13px] text-[var(--text-secondary)]">
+                <p>{t("resume.community.ltux")}</p>
+                <p>{t("resume.community.uxy")}</p>
+              </div>
             </div>
           </div>
         </SectionReveal>

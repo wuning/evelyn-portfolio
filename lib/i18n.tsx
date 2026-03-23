@@ -18,8 +18,8 @@ const translations: Record<string, Record<Locale, string>> = {
 
   // Hero
   "hero.label": {
-    en: "Senior Product Designer · Fintech & Web3",
-    zh: "資深產品設計師 · 金融科技 & Web3",
+    en: "Senior Product Designer · High-Stakes Digital Products",
+    zh: "資深產品設計師 · 高風險數位產品",
   },
   "hero.headline1": { en: "See the risk", zh: "在點擊之前" },
   "hero.headline2": { en: "before the click.", zh: "看見風險。" },
@@ -33,7 +33,7 @@ const translations: Record<string, Record<Locale, string>> = {
   },
   "hero.cta.work": { en: "View Work", zh: "查看作品" },
   "hero.cta.contact": { en: "Get in Touch", zh: "聯繫我" },
-  "hero.metric.years": { en: "YEARS FINTECH", zh: "年金融科技經驗" },
+  "hero.metric.years": { en: "YEARS IN DESIGN", zh: "年設計經驗" },
   "hero.metric.products": { en: "PRODUCTS SHIPPED", zh: "個產品上線" },
   "hero.metric.conversion": { en: "BEST CONVERSION LIFT", zh: "最佳轉換提升" },
 
@@ -109,8 +109,8 @@ const translations: Record<string, Record<Locale, string>> = {
     zh: "判斷哪個介面不該存在。」",
   },
   "about.bio": {
-    en: "Evelyn Wu · Senior Product Designer · 5+ years fintech & web3",
-    zh: "Evelyn Wu · 資深產品設計師 · 5+ 年金融科技 & Web3",
+    en: "Evelyn Wu · Senior Product Designer · 10+ years in design, 7+ in product design",
+    zh: "Evelyn Wu · 資深產品設計師 · 10 年以上設計經驗，7 年以上產品設計",
   },
   "about.more": { en: "More about me →", zh: "更多關於我 →" },
 
@@ -575,8 +575,8 @@ const translations: Record<string, Record<Locale, string>> = {
   "resume.label": { en: "Resume", zh: "履歷" },
   "resume.download": { en: "Download PDF", zh: "下載 PDF" },
   "resume.summary": {
-    en: "Product designer with 8+ years of experience building fintech, SaaS, and Web3 products from MVP to mature, revenue-generating platforms. I specialize in designing for high-stakes, irreversible decisions — the moments where judgment matters more than speed. Remote experience with US-based companies across time zones.",
-    zh: "8 年以上經驗的產品設計師，從 MVP 到成熟的營收型平台，專注於金融科技、SaaS 與 Web3 產品。我擅長設計高風險、不可逆的決策——在這些時刻，判斷力比速度更重要。有跨時區與美國公司的遠端合作經驗。",
+    en: "Designer with 10+ years in design, 7+ focused on product design for high-stakes digital products where user errors have irreversible consequences — from 0→1 financial MVPs to growth at 400K+ MAU scale. At BitoGroup, designed a product from experiment to 25% of company revenue (+34% conversion). Operate end-to-end: user research, product strategy, design systems, and dev handoff. Experienced in fully remote, async-first workflows — documented design rationale and structured cross-timezone collaboration across distributed teams.",
+    zh: "10 年以上設計經驗，其中 7 年以上專注於高風險數位產品設計——用戶錯誤將造成不可逆後果的產品，從零到一金融 MVP 到 40 萬+ MAU 規模的成長優化。在幣託集團將一個實驗產品設計成公司 25% 營收（轉換率 +34%）。端到端執行：用戶研究、產品策略、設計系統到開發交付。具備全遠端異步工作經驗——以文件驅動設計決策、結構化跨時區協作。",
   },
 
   "resume.exp": { en: "Experience", zh: "經歷" },
@@ -585,54 +585,54 @@ const translations: Record<string, Record<Locale, string>> = {
   "resume.exp1.role": { en: "Senior Product Designer", zh: "Senior Product Designer" },
   "resume.exp1.period": { en: "Feb 2024 – Aug 2024 · Remote, US-based", zh: "2024/02 – 2024/08 · 遠端，美國公司" },
   "resume.exp1.bullets": {
-    en: "Led end-to-end design for a US startup in live music entertainment — mobile app, web platform MVP, and design system. Conducted user research and competitive analysis. Collaborated with remote cross-functional team across time zones.",
-    zh: "主導美國現場音樂新創的端到端設計——行動 App、網頁平台 MVP、設計系統。進行用戶研究與競品分析。跨時區遠端團隊合作。",
+    en: "Sole designer for a US-based music-tech startup. Led end-to-end product design from concept to MVP launch — defined information architecture, user flows, and interaction patterns across mobile app and web platform. Built and documented a scalable design system in Figma. Operated async across 3 time zones (Taiwan · US · Ukraine), delivering daily written updates with design rationale and annotated Figma files.",
+    zh: "美國音樂科技新創的唯一設計師。主導端到端產品設計——從概念到 MVP 上線，定義資訊架構、用戶流程與互動模式（行動 App + 網頁平台）。在 Figma 建立並記錄可擴展的設計系統。跨三個時區（台灣·美國·烏克蘭）異步協作，每日撰寫設計進度更新並附上設計理由與標註的 Figma 檔案。",
   },
 
   "resume.exp2.company": { en: "ThunderCore", zh: "ThunderCore" },
   "resume.exp2.role": { en: "Product Designer", zh: "Product Designer" },
   "resume.exp2.period": { en: "Feb 2021 – Aug 2023", zh: "2021/02 – 2023/08" },
   "resume.exp2.bullets": {
-    en: "Designed TT Wallet deposit flow, referral program (+20% MAU), and facilitated cross-functional workshops for ThunderCore Bridge. Led design strategy for growth features and cross-chain financial tools.",
-    zh: "設計 TT Wallet 入金流程、推薦計畫（MAU +20%），主導 ThunderCore Bridge 跨部門工作坊。負責成長功能與跨鏈金融工具的設計策略。",
+    en: "Redesigned deposit flow for a mobile wallet with 400K+ MAU, reducing friction in high-stakes operations where errors mean permanent loss of funds. Built and maintained the product's design system to ensure consistency across features. Designed referral program that drove +20% MAU growth and contributed to a 16% increase in token value. Facilitated cross-functional workshops for a cross-chain asset transfer product (multi-million dollar migration goal), shifting team consensus from UI modernization to risk-disclosure-first approach. Led internationalization across 11 languages, coordinating with regional GMs and recommending Lokalise to improve translation workflows. Mentored a UX intern for 6 months (went on to top HCI program in Seattle) and coached a junior designer. Rated \"Above Expectation\" — recognized for highest cross-team integration capability.",
+    zh: "為 40 萬+ MAU 的行動錢包重新設計入金流程，降低高風險操作的摩擦——在這些操作中，錯誤意味著資金永久損失。建立並維護產品設計系統，確保跨功能的一致性。設計推薦計畫推動 MAU 成長 +20%，同時帶動代幣價值上升 16%。主導跨鏈資產轉移產品的跨部門工作坊（千萬美元級遷移目標），將團隊共識從 UI 現代化轉向風險揭露優先。主導 11 種語言的國際化，與各國 GM 協調翻譯並建議採用 Lokalise 改善流程。帶領 UX 實習生 6 個月（後赴 University of Washington）並指導初階設計師。績效評為「Above Expectation」——被評為團隊中整合能力最高。",
   },
 
   "resume.exp3.company": { en: "BitoGroup", zh: "幣託集團" },
-  "resume.exp3.role": { en: "UI/UX Designer", zh: "UI/UX Designer" },
-  "resume.exp3.period": { en: "2019 – 2021", zh: "2019 – 2021" },
+  "resume.exp3.role": { en: "Product Designer", zh: "Product Designer" },
+  "resume.exp3.period": { en: "Aug 2019 – Feb 2021", zh: "2019/08 – 2021/02" },
   "resume.exp3.bullets": {
-    en: "Designed BitoDebt from 0→1 through 3 iterations over 1 year. +34% conversion (22%→56%), 100% sell-out rate, +57% trading volume. Product grew from experiment to 25% of company revenue.",
-    zh: "一年內從零到一設計 BitoDebt，歷經三次迭代。轉換率 +34%（22%→56%），每檔完售，交易量 +57%。從實驗性產品成長為佔公司 25% 營收。",
+    en: "Designed BitoDebt from 0→1 through 3 iterations — a financial product where every interaction involves real capital at risk. +34% conversion (22%→56%), 100% sell-out rate, +57% trading volume. Product grew from experiment to 25% of company revenue. Partnered with UX research firm (UserXPer) on mixed-methods study: 9 in-depth interviews, 36 survey responses, and data analysis across 83K+ user records and 760K+ transactions — producing 3 user personas that informed product strategy. Identified collaboration bottleneck and drove migration from Sketch+Zeplin to Figma, enabling real-time design review via shareable links for leadership, marketing, and support teams.",
+    zh: "從零到一設計 BitoDebt，歷經 3 次迭代——每個互動都涉及真實資金風險的金融產品。轉換率 +34%（22%→56%），每檔完售，交易量 +57%，從實驗成長為公司 25% 營收。與悠識數位合作進行混合研究：9 位深度訪談、36 份問卷、分析 83K+ 用戶紀錄與 760K+ 交易——產出 3 個 Persona 指導產品策略。發現協作瓶頸，推動全團隊從 Sketch+Zeplin 遷移至 Figma，讓主管、行銷、客服可透過連結即時查看設計。",
   },
 
   "resume.exp4.company": { en: "IBM", zh: "IBM" },
   "resume.exp4.role": { en: "UI Developer", zh: "UI Developer" },
   "resume.exp4.period": { en: "2018", zh: "2018" },
   "resume.exp4.bullets": {
-    en: "Collaborated with system analysts and engineers to build a large-scale internal system for a major financial institution in Taiwan.",
-    zh: "與系統分析師及工程師合作，為台灣大型金融機構建置內部系統。",
+    en: "Built production UI for E.SUN Bank's field CRM system serving tens of thousands of bankers — embedded on-site to map banker workflows and translate requirements into responsive, interactive prototypes.",
+    zh: "為玉山銀行行員外訪 CRM 系統建置產品介面，服務數萬名行員——駐點理解行員工作流程，將需求轉化為響應式互動原型。",
   },
 
   "resume.skills": { en: "Skills", zh: "技能" },
   "resume.skills.design": { en: "Design", zh: "設計" },
   "resume.skills.design.list": {
-    en: "Figma, Design Systems, Wireframing, Prototyping, Information Architecture, Visual Design",
-    zh: "Figma、設計系統、Wireframing、Prototyping、資訊架構、視覺設計",
+    en: "Figma, FigJam, Design Systems, Interaction Design, Prototyping, Wireframing, User Flows, Information Architecture, Responsive Design, Visual Design, Accessibility (WCAG), Product Strategy",
+    zh: "Figma、FigJam、設計系統、互動設計、Prototyping、Wireframing、User Flows、資訊架構、響應式設計、視覺設計、無障礙設計（WCAG）、產品策略",
   },
   "resume.skills.research": { en: "Research", zh: "研究" },
   "resume.skills.research.list": {
-    en: "User Interviews, Usability Testing, Surveys, Persona Development, Journey Mapping",
-    zh: "用戶訪談、易用性測試、問卷調查、Persona、Journey Mapping",
+    en: "User Interviews, Usability Testing, Surveys, Persona Development, Journey Mapping, Data-informed Design",
+    zh: "用戶訪談、易用性測試、問卷調查、Persona、Journey Mapping、數據驅動設計",
   },
   "resume.skills.data": { en: "Data & Analysis", zh: "數據分析" },
   "resume.skills.data.list": {
-    en: "Google Analytics, Hotjar Heatmaps, Conversion Funnel Analysis, A/B Testing",
-    zh: "Google Analytics、Hotjar 熱點圖、轉換漏斗分析、A/B Testing",
+    en: "Google Analytics, Hotjar, Funnel Analysis, A/B Testing",
+    zh: "Google Analytics、Hotjar、漏斗分析、A/B Testing",
   },
   "resume.skills.facilitation": { en: "Facilitation", zh: "引導" },
   "resume.skills.facilitation.list": {
-    en: "Cross-functional Workshops, Stakeholder Alignment",
-    zh: "跨部門工作坊、利害關係人對齊",
+    en: "Cross-functional Workshops, Stakeholder Alignment, Design Critique, Async Communication, Jira, Miro, Notion, ClickUp",
+    zh: "跨部門工作坊、利害關係人對齊、設計評審（Design Critique）、異步溝通、Jira、Miro、Notion、ClickUp",
   },
 
   "resume.edu": { en: "Education", zh: "學歷" },
@@ -657,8 +657,12 @@ const translations: Record<string, Record<Locale, string>> = {
 
   "resume.community": { en: "Community", zh: "社群" },
   "resume.community.ltux": {
-    en: "Ladies that UX — Taipei Director (2021–2022)",
-    zh: "Ladies that UX — 台北分部負責人（2021–2022）",
+    en: "Ladies that UX Taipei — Director (2021–2022). Organized 6+ events (50–100 attendees each), facilitated user research workshops.",
+    zh: "Ladies that UX 台北 — 負責人（2021–2022）。舉辦 6+ 場活動（每場 50-100 人），帶領使用者研究工作坊。",
+  },
+  "resume.community.uxy": {
+    en: "UXY — Workshop Program Lead (2024–Present). Curate monthly design & AI workshops for 500+ annual participants (4.5/5 satisfaction). Sourced international speakers including accessibility (A11Y) practitioners.",
+    zh: "UXY — 工作坊策劃負責人（2024–至今）。每月策劃設計與 AI 工作坊，年度 500+ 人參加（滿意度 4.5/5）。邀請海外講者包括無障礙（A11Y）設計師。",
   },
 
   // ═══════════════════════════════════════════════

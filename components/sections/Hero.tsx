@@ -8,8 +8,8 @@ export function Hero() {
   const { t } = useI18n()
 
   const metrics = [
-    { value: 5, suffix: "+", label: t("hero.metric.years") },
-    { value: 4, suffix: "", label: t("hero.metric.products") },
+    { value: 10, suffix: "+", label: t("hero.metric.years") },
+    { value: 4, suffix: "+", label: t("hero.metric.products") },
     { value: 34, suffix: "%", label: t("hero.metric.conversion") },
   ]
 
