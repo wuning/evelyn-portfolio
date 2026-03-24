@@ -56,8 +56,15 @@ export function Header() {
           ))}
           <button
             onClick={toggle}
-            className="rounded-[6px] border border-[var(--border-subtle)] px-3 py-1.5 text-[12px] font-medium text-[var(--text-secondary)] tracking-[0.02em] transition-all duration-150 hover:border-[var(--accent-brass)] hover:text-[var(--accent-brass)]"
+            className="flex items-center gap-1.5 rounded-[6px] border border-[var(--border-subtle)] px-2.5 py-1.5 text-[12px] font-medium text-[var(--text-secondary)] tracking-[0.02em] transition-all duration-150 hover:border-[var(--accent-brass)] hover:text-[var(--accent-brass)]"
+            aria-label={locale === "en" ? "Switch to Chinese" : "Switch to English"}
           >
+            <span
+              className="inline-block overflow-hidden rounded-[3px] leading-none"
+              style={{ width: 18, height: 13, fontSize: 16, lineHeight: "13px" }}
+            >
+              {locale === "en" ? "🇹🇼" : "🇺🇸"}
+            </span>
             {locale === "en" ? "中文" : "EN"}
           </button>
         </nav>
@@ -65,8 +72,15 @@ export function Header() {
         <div className="md:hidden flex items-center gap-3">
           <button
             onClick={toggle}
-            className="text-[12px] font-medium text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded-[6px] px-2.5 py-1"
+            className="flex items-center gap-1.5 text-[12px] font-medium text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded-[6px] px-2.5 py-1"
+            aria-label={locale === "en" ? "Switch to Chinese" : "Switch to English"}
           >
+            <span
+              className="inline-block overflow-hidden rounded-[3px] leading-none"
+              style={{ width: 18, height: 13, fontSize: 16, lineHeight: "13px" }}
+            >
+              {locale === "en" ? "🇹🇼" : "🇺🇸"}
+            </span>
             {locale === "en" ? "中文" : "EN"}
           </button>
           <button
