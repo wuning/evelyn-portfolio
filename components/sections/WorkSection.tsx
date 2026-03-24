@@ -20,6 +20,7 @@ function useCases() {
       href: "/cases/bitodebt",
       featured: true,
       interactive: true,
+      img: "/images/landing/bitodebt.png",
     },
     {
       tag: t("case.deposit.tag"),
@@ -30,6 +31,7 @@ function useCases() {
       href: "/cases/deposit",
       featured: false,
       interactive: true,
+      img: "/images/landing/wallet-deposit.png",
     },
     {
       tag: t("case.referral.tag"),
@@ -39,6 +41,7 @@ function useCases() {
       metrics: [{ label: t("case.mau"), value: "+20%" }],
       href: "/cases/referral",
       featured: false,
+      img: "/images/landing/wallet-referral.png",
     },
     {
       tag: t("case.bridge.tag"),
@@ -48,6 +51,7 @@ function useCases() {
       metrics: [{ label: t("case.ux"), value: "Redefined" }],
       href: "/cases/bridge",
       featured: false,
+      img: "/images/landing/thundercore-birdge-workshop.png",
     },
   ]
 }
@@ -141,9 +145,7 @@ function CaseRow({
         caseItem.featured ? "bg-[var(--bg-dark-surface)]" : "bg-[var(--bg-surface)]"
       }`}
     >
-      <span className="text-[var(--text-muted)] text-[13px]">
-        [ {caseItem.tag.split(" · ")[0]} Preview ]
-      </span>
+      <img src={caseItem.img} alt={caseItem.title} />
     </div>
   )
 
