@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, Sun, Moon } from "lucide-react"
 import { useI18n } from "@/lib/i18n"
 import { useTheme } from "@/components/animations/ThemeProvider"
+import { LogoMark } from "@/components/ui/LogoMark"
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -40,10 +41,16 @@ export function Header() {
       <div className="mx-auto flex h-full max-w-[1200px] items-center justify-between px-6 md:px-[120px]">
         <a
           href="/"
-          className="text-[var(--text-primary)] text-[15px] tracking-[-0.02em] transition-colors duration-150 hover:text-[var(--accent-brass)]"
-          style={{ fontFamily: "Georgia, 'Instrument Serif', serif", fontWeight: 400 }}
+          className="flex items-center gap-2.5 text-[var(--text-primary)] transition-colors duration-150 hover:text-[var(--accent-brass)] group"
+          aria-label="Eve's Eye — home"
         >
-          Eve&apos;s Eye
+          <LogoMark size={22} className="shrink-0" />
+          <span
+            className="text-[15px] tracking-[-0.02em]"
+            style={{ fontFamily: "Georgia, 'Instrument Serif', serif", fontWeight: 400 }}
+          >
+            Eve&apos;s Eye
+          </span>
         </a>
 
         <nav className="hidden md:flex items-center gap-8">

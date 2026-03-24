@@ -267,6 +267,53 @@ html.dark {
   .font-mono-data {
     font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
   }
+
+  /* ===== EVE'S EYE LOGO MARK ===== */
+
+  /* Iris fades in on hover */
+  .logo-mark .logo-iris {
+    transition: opacity 0.3s ease;
+  }
+  a:hover .logo-mark .logo-iris,
+  .logo-mark:hover .logo-iris {
+    opacity: 0.55;
+  }
+
+  /* Fork branches spread slightly on hover */
+  .logo-mark .logo-branch-left {
+    transform-origin: 28px 18px;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .logo-mark .logo-branch-right {
+    transform-origin: 28px 18px;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  a:hover .logo-mark .logo-branch-left,
+  .logo-mark:hover .logo-branch-left {
+    transform: rotate(-8deg);
+  }
+  a:hover .logo-mark .logo-branch-right,
+  .logo-mark:hover .logo-branch-right {
+    transform: rotate(8deg);
+  }
+
+  /* Junction dot pulses on hover */
+  .logo-mark .logo-dot {
+    transition: r 0.3s ease, opacity 0.3s ease;
+  }
+  a:hover .logo-mark .logo-dot,
+  .logo-mark:hover .logo-dot {
+    opacity: 0.8;
+  }
+
+  /* Eye outline dims slightly when hovered (focus shifts to fork) */
+  .logo-mark .logo-eye {
+    transition: opacity 0.3s ease;
+  }
+  a:hover .logo-mark .logo-eye,
+  .logo-mark:hover .logo-eye {
+    opacity: 0.7;
+  }
 }
 
 /* Reduced motion — accessibility */
