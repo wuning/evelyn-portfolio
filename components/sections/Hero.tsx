@@ -19,7 +19,7 @@ export function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0, 0, 0.2, 1] }}
+          transition={{ duration: 0.5, delay: 0.1, ease: [0, 0, 0.2, 1] }}
           className="section-label mb-6"
         >
           {t("hero.label")}
@@ -28,7 +28,7 @@ export function Hero() {
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0, 0, 0.2, 1] }}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0, 0, 0.2, 1] }}
           className="mb-6 max-w-[700px]"
           style={{ fontFamily: "Georgia, 'Instrument Serif', serif" }}
         >
@@ -40,7 +40,7 @@ export function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7, ease: [0, 0, 0.2, 1] }}
+          transition={{ duration: 0.5, delay: 0.35, ease: [0, 0, 0.2, 1] }}
           className="max-w-[520px] text-[var(--text-secondary)] text-[18px] leading-relaxed mb-4"
         >
           {t("hero.subtitle")}
@@ -48,7 +48,7 @@ export function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.8, ease: [0, 0, 0.2, 1] }}
+          transition={{ duration: 0.5, delay: 0.45, ease: [0, 0, 0.2, 1] }}
           className="max-w-[520px] text-[var(--text-secondary)] text-[14px] leading-relaxed mb-10"
         >
           {t("hero.subtitle2")}
@@ -57,7 +57,7 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.9, ease: [0, 0, 0.2, 1] }}
+          transition={{ duration: 0.5, delay: 0.55, ease: [0, 0, 0.2, 1] }}
           className="flex flex-wrap gap-4 mb-16"
         >
           <a
@@ -77,14 +77,14 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.1, ease: [0, 0, 0.2, 1] }}
+          transition={{ duration: 0.5, delay: 0.7, ease: [0, 0, 0.2, 1] }}
           className="flex flex-wrap gap-12 md:gap-16"
         >
           {metrics.map((metric, i) => (
             <div key={i} className="flex flex-col gap-1">
               <div
                 className="text-[28px] font-light text-[var(--text-primary)] tracking-tight"
-                style={{ fontFamily: "Georgia, serif" }}
+                style={{ fontFamily: "var(--font-mono), 'JetBrains Mono', monospace" }}
               >
                 <Counter
                   value={metric.value}

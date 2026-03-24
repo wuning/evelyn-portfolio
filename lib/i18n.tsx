@@ -945,6 +945,222 @@ const translations: Record<string, Record<Locale, string>> = {
     en: "Always validate assumptions with data — never trust a designer's intuition.",
     zh: "永遠用數據驗證假設，不要相信設計師的直覺。",
   },
+
+  // ─── Referral Case Study ───
+  "ref.subtitle": { en: "TT Wallet · 2023", zh: "TT Wallet · 2023" },
+  "ref.metric.mau": { en: "MAU Growth", zh: "MAU 成長" },
+  "ref.metric.fake": { en: "Fake Accounts", zh: "虛假帳號" },
+  "ref.metric.fake.val": { en: "↓", zh: "↓" },
+  "ref.metric.dau": { en: "DAU Target", zh: "DAU 目標" },
+  "ref.metric.dau.val": { en: "Not Met", zh: "未達" },
+  "ref.insight": {
+    en: "Honesty matters more than conversion. Under imperfect conditions, not misleading users is the responsible choice.",
+    zh: "誠實比轉換率重要；在不完美條件下，不誤導就是負責。",
+  },
+  "ref.s1.title": { en: "Context", zh: "背景" },
+  "ref.s1.desc": {
+    en: "The team's goal: acquire new users through Referral. The problem: new users were asked to deposit before building trust. Three design directions, each with trade-offs.",
+    zh: "團隊目標：用 Referral 拉新用戶。問題：新用戶在建立信任前就被要求存款。三個設計方向，各有取捨。",
+  },
+  "ref.s2.title": { en: "Three Roads", zh: "三條路" },
+  "ref.s2.desc": {
+    en: "Click any road to see its pros and cons. Then see which one I chose.",
+    zh: "點擊任一條路，看它的優缺點。然後看我選了哪一條。",
+  },
+  "ref.road.a.title": { en: "Visual-Driven", zh: "視覺驅動" },
+  "ref.road.a.pros": {
+    en: "Highest conversion rate|Strong visual impact|Short-term metrics look great",
+    zh: "轉換率最高|視覺衝擊力強|短期數據好看",
+  },
+  "ref.road.a.cons": {
+    en: "Overstates returns|Attracts speculators|Erodes long-term trust",
+    zh: "誇大報酬預期|吸引投機用戶|長期信任受損",
+  },
+  "ref.road.b.title": { en: "Info-Driven", zh: "資訊驅動" },
+  "ref.road.b.pros": {
+    en: "Transparent rules|Fewer disputes|Compliance-friendly",
+    zh: "規則透明|減少糾紛|合規友善",
+  },
+  "ref.road.b.cons": {
+    en: "Too much info|Users may not finish reading|Medium conversion",
+    zh: "資訊量過大|用戶可能看不完|轉換率中等",
+  },
+  "ref.road.c.title": { en: "Value-Oriented", zh: "價值導向" },
+  "ref.road.c.pros": {
+    en: "Explains purpose upfront|Reduces fake accounts|Builds long-term trust",
+    zh: "提早說清楚用途|減少虛假帳號|建立長期信任",
+  },
+  "ref.road.c.cons": {
+    en: "Less immediately attractive|Lower short-term DAU|Requires more education",
+    zh: "吸引力相對低|短期 DAU 不高|需要更多教育",
+  },
+  "ref.tl.launch.title": { en: "Referral Launch", zh: "Referral 上線" },
+  "ref.tl.launch.detail": {
+    en: "Chose Version C: reveal reward purpose upfront instead of hiding complexity behind high incentives. MAU begins to grow.",
+    zh: "選擇 Version C：提早揭露獎勵用途，而非用高誘因掩蓋複雜性。MAU 開始成長。",
+  },
+  "ref.tl.w1.title": { en: "Early Data", zh: "初期數據" },
+  "ref.tl.w1.detail": {
+    en: "MAU grew 20%, fake accounts decreased. But DAU growth was below expectations — users signed up but weren't active.",
+    zh: "MAU 成長 20%，虛假帳號減少。但 DAU 成長不如預期——用戶註冊了但不活躍。",
+  },
+  "ref.tl.w1.insight": {
+    en: "Honest design attracted the right people, but retention needed more.",
+    zh: "誠實設計吸引了對的人，但留存需要更多。",
+  },
+  "ref.tl.w2.title": { en: "Feature Sunset", zh: "功能下架" },
+  "ref.tl.w2.detail": {
+    en: "DAU didn't hit target; team decided to sunset the Referral feature. Was this a failure?",
+    zh: "DAU 未達目標，團隊決定下架 Referral 功能。這算失敗嗎？",
+  },
+  "ref.tl.w2.insight": {
+    en: "Under imperfect conditions, not misleading is responsible.",
+    zh: "在不完美條件下，不誤導就是負責。",
+  },
+  "ref.tl.reflect.title": { en: "Reflection", zh: "反思" },
+  "ref.tl.reflect.detail": {
+    en: "If we had chosen Version A, short-term metrics would look better, but it would attract many speculators. The trust damage upon sunset would have been far worse. Honesty matters more than conversion.",
+    zh: "如果選了 Version A，短期數據會更好看，但會吸引大量投機用戶。下架時造成的信任傷害會更大。誠實比轉換率重要。",
+  },
+  "ref.tl.reflect.insight": {
+    en: "Honesty matters more than conversion; under imperfect conditions, not misleading is responsible.",
+    zh: "誠實比轉換率重要；在不完美條件下，不誤導就是負責。",
+  },
+  "ref.s3.title": { en: "Launch & Sunset", zh: "上線與下架" },
+  "ref.s3.desc": {
+    en: "Drag the timeline to see the full journey from launch to sunset.",
+    zh: "拖動時間軸，看 Referral 從上線到下架的完整過程。",
+  },
+  "ref.s4.title": { en: "Was This a Failure?", zh: "這算失敗嗎？" },
+  "ref.s4.data": {
+    en: "By the numbers — yes. DAU missed target, the feature was sunset.",
+    zh: "從數據看——是的。DAU 沒達標，功能被下架。",
+  },
+  "ref.s4.but": {
+    en: "But if we had chosen Version A, short-term metrics would look better, yet it would attract many speculators. The trust damage upon sunset would have been far worse.",
+    zh: "但如果選了 Version A，短期數據會更好看，卻會吸引大量投機用戶。下架時造成的信任傷害會更大。",
+  },
+  "ref.s4.quote1": {
+    en: "Honesty matters more than conversion.",
+    zh: "誠實比轉換率重要。",
+  },
+  "ref.s4.quote2": {
+    en: "Under imperfect conditions, not misleading users is the responsible choice.",
+    zh: "在不完美條件下，不誤導就是負責。",
+  },
+
+  // ─── Bridge Case Study ───
+  "br.subtitle": { en: "ThunderCore · 2023", zh: "ThunderCore · 2023" },
+  "br.metric.ux": { en: "Redefined UX", zh: "重新定義 UX" },
+  "br.metric.risk": { en: "Prevented Risk", zh: "預防風險" },
+  "br.metric.ship": { en: "New UI Shipped", zh: "新介面上線" },
+  "br.insight": {
+    en: "A designer's job is more than drawing. Sometimes the most important decision is 'what not to do.'",
+    zh: "設計師的工作不只是畫圖。有時候最重要的決策是「現在不該做什麼」。",
+  },
+  "br.s1.title": { en: "Initial Request", zh: "初始需求" },
+  "br.s1.desc": {
+    en: "The team wanted to optimize the cross-chain transfer UI — 'make it look more modern.' On the surface, a UI upgrade. But I sensed a deeper issue.",
+    zh: "團隊想優化跨鏈轉帳介面——「看起來更現代」。這是一個 UI 升級的需求。但我察覺到更深層的問題。",
+  },
+  "br.s2.title": { en: "What I Saw", zh: "我察覺的問題" },
+  "br.s2.desc": {
+    en: "Drag the timeline to see my thinking process from receiving the request to reaching consensus. Each point has a key turning moment.",
+    zh: "拖動時間軸，看我從「接到需求」到「達成共識」的完整思考過程。每個時間點都有一個關鍵轉折。",
+  },
+  "br.tl.request.title": { en: "Initial Request", zh: "初始需求" },
+  "br.tl.request.detail": {
+    en: "The team wanted to optimize the cross-chain transfer UI — 'make it look more modern.' On the surface, a UI upgrade request.",
+    zh: "團隊想優化跨鏈轉帳介面——「看起來更現代」。表面上是 UI 升級的需求。",
+  },
+  "br.tl.discover.title": { en: "Discovering the Problem", zh: "察覺問題" },
+  "br.tl.discover.detail": {
+    en: "Digging deeper, I found: errors don't happen at the last step — they happen at the moment of selection. Users completed irreversible operations without understanding them.",
+    zh: "深入研究後發現：錯誤不是發生在最後一步，而是發生在「選擇的當下」。用戶在不理解的情況下就完成了不可逆操作。",
+  },
+  "br.tl.discover.insight": {
+    en: "Errors don't happen at the last step — they happen at the moment of selection.",
+    zh: "錯誤不是發生在最後一步，而是發生在選擇的當下。",
+  },
+  "br.tl.insight.title": { en: "Core Insight", zh: "核心洞察" },
+  "br.tl.insight.detail": {
+    en: "A flow that's too smooth is actually a risk. In irreversible cross-chain transfers, 'smooth' can make users skip critical judgment points. Optimizing the UI would only make the problem more hidden.",
+    zh: "流程太順了反而是風險。在不可逆的跨鏈轉帳中，「順暢」可能讓用戶跳過關鍵判斷點。優化介面只會讓問題更隱蔽。",
+  },
+  "br.tl.insight.insight": {
+    en: "A flow that's too smooth is actually a risk.",
+    zh: "流程太順了反而是風險。",
+  },
+  "br.tl.workshop.title": { en: "Workshop Design", zh: "工作坊設計" },
+  "br.tl.workshop.detail": {
+    en: "Instead of persuading the team directly, I designed a workshop. I had team members walk through the cross-chain flow themselves, experiencing the issues firsthand. Not persuasion — guided discovery.",
+    zh: "我沒有直接說服團隊，而是設計了一場工作坊。讓團隊成員自己走一次跨鏈流程，親身體驗問題。不是說服，而是引導發現。",
+  },
+  "br.tl.workshop.insight": {
+    en: "A designer's job isn't just making screens — it's guiding the team to see the problem.",
+    zh: "設計師的工作不只是畫圖，還包括引導團隊看見問題。",
+  },
+  "br.tl.consensus.title": { en: "Reaching Consensus", zh: "達成共識" },
+  "br.tl.consensus.detail": {
+    en: "The team reached consensus: pause the UI optimization and first redefine what 'good experience' means. Not 'finish faster,' but 'finish with more confidence.'",
+    zh: "團隊達成共識：暫緩介面優化，先重新定義「好體驗」。不是「更快完成」，而是「更有把握地完成」。",
+  },
+  "br.tl.consensus.insight": {
+    en: "Sometimes the most important design decision is 'what not to do right now.'",
+    zh: "有時候最重要的設計決策是「現在不該做什麼」。",
+  },
+  "br.s3.title": { en: "Workshop Design", zh: "工作坊設計" },
+  "br.s3.desc": {
+    en: "How did I help the team see the problem? Not persuasion — guided discovery.",
+    zh: "我如何讓團隊看見問題？不是說服，而是引導發現。",
+  },
+  "br.ws.1.title": { en: "Experiential Learning", zh: "體驗式教學" },
+  "br.ws.1.desc": {
+    en: "Had team members walk through the cross-chain flow themselves",
+    zh: "讓團隊成員自己走一次跨鏈流程",
+  },
+  "br.ws.2.title": { en: "Problem Visualization", zh: "問題可視化" },
+  "br.ws.2.desc": {
+    en: "Marked every moment where users could make a wrong decision",
+    zh: "標記每個「用戶可能做錯決定」的時刻",
+  },
+  "br.ws.3.title": { en: "Redefinition", zh: "重新定義" },
+  "br.ws.3.desc": {
+    en: "Shifted from 'finish faster' to 'finish with more confidence'",
+    zh: "從「更快完成」轉向「更有把握地完成」",
+  },
+  "br.s4.title": { en: "Reflection", zh: "反思" },
+  "br.achieved.label": { en: "What We Achieved", zh: "我們達成了什麼" },
+  "br.achieved.1": {
+    en: "Team redefined 'good experience'",
+    zh: "團隊重新定義「好體驗」",
+  },
+  "br.achieved.2": {
+    en: "Prevented making the problem worse",
+    zh: "避免讓問題更嚴重",
+  },
+  "br.achieved.3": {
+    en: "Established a new design decision framework",
+    zh: "建立了設計決策的新框架",
+  },
+  "br.notship.label": { en: "What We Didn't Ship", zh: "沒有交付的" },
+  "br.notship.1": { en: "No new interface produced", zh: "沒有產出新介面" },
+  "br.notship.2": {
+    en: "No quantifiable short-term results",
+    zh: "短期沒有可量化的成果",
+  },
+  "br.notship.3": {
+    en: "→ But avoided a much bigger risk",
+    zh: "→ 但避免了更大的風險",
+  },
+  "br.quote1": {
+    en: "A designer's job is more than drawing.",
+    zh: "設計師的工作不只是畫圖。",
+  },
+  "br.quote2": {
+    en: "Sometimes the most important decision is 'what not to do.'",
+    zh: "有時候最重要的決策是『不做什麼』。",
+  },
 }
 
 const I18nContext = createContext<I18nContextType | null>(null)

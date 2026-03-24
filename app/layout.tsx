@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/sections/Header"
 import { ScrollProgress } from "@/components/animations/ScrollProgress"
@@ -13,10 +13,17 @@ const inter = Inter({
   display: "swap",
 })
 
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  display: "swap",
+})
+
 export const metadata: Metadata = {
   title: "Evelyn Wu — Senior Product Designer | Eve's Eye",
   description:
-    "See the risk before the click. Senior Product Designer specializing in fintech & web3 trust systems. 5+ years designing high-stakes decisions.",
+    "See the risk before the click. Senior Product Designer specializing in fintech & web3 trust systems. 10+ years designing high-stakes decisions.",
   keywords: ["Product Design", "Senior Designer", "Fintech", "Web3", "Portfolio", "Evelyn Wu", "Eve's Eye"],
   openGraph: {
     title: "Evelyn Wu — Senior Product Designer",
@@ -33,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
         <I18nProvider>
           <LenisProvider>
             <ScrollProgress />

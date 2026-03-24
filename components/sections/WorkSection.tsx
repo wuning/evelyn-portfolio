@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { SectionReveal } from "@/components/animations/SectionReveal"
 import { ArrowUpRight } from "lucide-react"
 import { motion } from "framer-motion"
@@ -141,11 +142,24 @@ function CaseRow({
 
   const imageBlock = (
     <div
-      className={`flex items-center justify-center rounded-[12px] min-h-[280px] md:min-h-full ${
+      className={`relative flex items-center justify-center rounded-[12px] min-h-[280px] md:min-h-full overflow-hidden ${
         caseItem.featured ? "bg-[var(--bg-dark-surface)]" : "bg-[var(--bg-surface)]"
       }`}
     >
-      <img src={caseItem.img} alt={caseItem.title} />
+      {caseItem.img ? (
+        <Image
+          src={caseItem.img}
+          alt={caseItem.tag.split(" · ")[0]}
+          fill
+          quality={100}
+          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          sizes="(max-width: 768px) 100vw, 100vw"
+        />
+      ) : (
+        <span className="text-[var(--text-muted)] text-[13px]">
+          [ {caseItem.tag.split(" · ")[0]} Preview ]
+        </span>
+      )}
     </div>
   )
 

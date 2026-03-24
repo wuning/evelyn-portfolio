@@ -69,6 +69,11 @@
   --accent-brass-dim: rgba(163, 134, 58, 0.10);
   --accent-brass-hover: #8B7232;
 
+  /* Signals — semantic colors for case studies */
+  --signal-risk: #C53030;
+  --signal-safe: #2D6A4F;
+  --signal-warning: #D97706;
+
   /* Borders */
   --border-subtle: #E7E5E0;
   --border-medium: #D6D3CD;
@@ -158,6 +163,13 @@
   h2 { font-size: var(--text-h2); }
   h3 { font-size: var(--text-h3); }
 
+  /* Focus visible — keyboard navigation */
+  :focus-visible {
+    outline: 2px solid var(--accent-brass);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
   ::selection {
     background-color: var(--accent-brass-dim);
     color: var(--text-primary);
@@ -201,5 +213,19 @@
     background: rgba(250, 248, 244, 0.85);
     backdrop-filter: blur(20px) saturate(1.5);
     -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  }
+
+  .font-mono-data {
+    font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+  }
+}
+
+/* Reduced motion — accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

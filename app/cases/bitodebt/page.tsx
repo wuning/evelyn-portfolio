@@ -3,6 +3,7 @@
 import { CaseLayout } from "@/components/sections/CaseLayout"
 import { CaseScene } from "@/components/sections/CaseScene"
 import { DraggableTimeline } from "@/components/interactive/DraggableTimeline"
+import { BeforeAfterSlider } from "@/components/interactive/BeforeAfterSlider"
 import { SectionReveal } from "@/components/animations/SectionReveal"
 import { Counter } from "@/components/animations/Counter"
 import { useI18n } from "@/lib/i18n"
@@ -187,21 +188,20 @@ export default function BitoDebtPage() {
         description={t("bd.iter2.desc")}
         bg="light"
       >
-        {/* Mood Board + Product Redesign */}
-        <SectionReveal>
-          <div className="rounded-[12px] overflow-hidden mb-3">
-            <img
-              src="/images/bitodebt/trust-moodboard.png"
-              alt="Magic Bean mood board and product homepage redesign"
-              className="w-full h-auto"
-            />
-          </div>
-          <div className="flex justify-between text-[11px] text-[var(--text-muted)] italic mb-8 px-1">
-            <span>{t("bd.iter2.before")}</span>
-            <span>{t("bd.iter2.brand")}</span>
-            <span>{t("bd.iter2.after")}</span>
-          </div>
-        </SectionReveal>
+        {/* Before / After Slider */}
+        <BeforeAfterSlider
+          before={{
+            src: "/cases/bitodebt/before.png",
+            alt: "BitoDebt homepage — before redesign",
+          }}
+          after={{
+            src: "/cases/bitodebt/after.png",
+            alt: "BitoDebt homepage — after redesign",
+          }}
+          beforeLabel={t("bd.iter2.before")}
+          afterLabel={t("bd.iter2.after")}
+          className="mb-8"
+        />
 
         {/* Magic Bean mascot */}
         <SectionReveal delay={0.1}>

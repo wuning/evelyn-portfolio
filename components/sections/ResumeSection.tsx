@@ -72,7 +72,8 @@ function SkillGroup({
 }
 
 export function ResumeSection() {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
+  const resumePdf = locale === "zh" ? "/EvelynWu_Resume_ZH.pdf" : "/EvelynWu_Resume.pdf"
 
   return (
     <section
@@ -96,7 +97,7 @@ export function ResumeSection() {
               </p>
             </div>
             <a
-              href="/EvelynWu_Resume.pdf"
+              href={resumePdf}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 rounded-[8px] border border-[var(--accent-brass)] px-4 py-2.5 text-[13px] font-medium text-[var(--accent-brass)] transition-all duration-150 hover:bg-[var(--accent-brass)] hover:text-white shrink-0"
