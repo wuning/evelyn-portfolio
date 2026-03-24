@@ -2,13 +2,15 @@
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Sun, Moon } from "lucide-react"
 import { useI18n } from "@/lib/i18n"
+import { useTheme } from "@/components/animations/ThemeProvider"
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const { locale, t, toggle } = useI18n()
+  const { theme, toggleTheme } = useTheme()
 
   const navItems = [
     { label: t("nav.work"), href: "#work" },
@@ -67,9 +69,23 @@ export function Header() {
             </span>
             {locale === "en" ? "中文" : "EN"}
           </button>
+          <button
+            onClick={toggleTheme}
+            className="flex items-center justify-center w-8 h-8 rounded-[6px] border border-[var(--border-subtle)] text-[var(--text-secondary)] transition-all duration-150 hover:border-[var(--accent-brass)] hover:text-[var(--accent-brass)]"
+            aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+          >
+            {theme === "light" ? <Moon size={14} /> : <Sun size={14} />}
+          </button>
         </nav>
 
-        <div className="md:hidden flex items-center gap-3">
+        <div className="md:hidden flex items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            className="flex items-center justify-center w-8 h-8 rounded-[6px] border border-[var(--border-subtle)] text-[var(--text-secondary)]"
+            aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+          >
+            {theme === "light" ? <Moon size={14} /> : <Sun size={14} />}
+          </button>
           <button
             onClick={toggle}
             className="flex items-center gap-1.5 text-[12px] font-medium text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded-[6px] px-2.5 py-1"

@@ -5,6 +5,7 @@ import { Header } from "@/components/sections/Header"
 import { ScrollProgress } from "@/components/animations/ScrollProgress"
 import { LenisProvider } from "@/components/animations/LenisProvider"
 import { I18nProvider } from "@/lib/i18n"
+import { ThemeProvider } from "@/components/animations/ThemeProvider"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -41,14 +42,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}>
-        <I18nProvider>
-          <LenisProvider>
-            <ScrollProgress />
-            <Header />
-            <div className="grain-overlay" aria-hidden="true" />
-            <main>{children}</main>
-          </LenisProvider>
-        </I18nProvider>
+        <ThemeProvider>
+          <I18nProvider>
+            <LenisProvider>
+              <ScrollProgress />
+              <Header />
+              <div className="grain-overlay" aria-hidden="true" />
+              <main>{children}</main>
+            </LenisProvider>
+          </I18nProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

@@ -129,6 +129,51 @@
   --chart-5: #F0EDE6;
 }
 
+/* ===== EVE'S EYE — DARK MODE ===== */
+
+html.dark {
+  /* Backgrounds */
+  --bg-primary: #141210;
+  --bg-surface: #1C1917;
+  --bg-dark: #0E0C0A;
+  --bg-dark-surface: #1C1917;
+
+  /* Text */
+  --text-primary: #F5F0E8;
+  --text-secondary: #A8A29E;
+  --text-muted: #57534E;
+
+  /* Accent — slightly brighter in dark */
+  --accent-brass: #C4A55A;
+  --accent-deep: #E2C278;
+  --accent-brass-dim: rgba(196, 165, 90, 0.12);
+  --accent-brass-hover: #D4B56A;
+
+  /* Borders */
+  --border-subtle: #2C2825;
+  --border-medium: #3D3935;
+
+  /* shadcn overrides — dark warm */
+  --background: #141210;
+  --foreground: #F5F0E8;
+  --card: #1C1917;
+  --card-foreground: #F5F0E8;
+  --popover: #1C1917;
+  --popover-foreground: #F5F0E8;
+  --primary: #C4A55A;
+  --primary-foreground: #141210;
+  --secondary: #2C2825;
+  --secondary-foreground: #F5F0E8;
+  --muted: #2C2825;
+  --muted-foreground: #A8A29E;
+  --accent: #2C2825;
+  --accent-foreground: #F5F0E8;
+  --destructive: #EF4444;
+  --border: #2C2825;
+  --input: #2C2825;
+  --ring: #C4A55A;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -213,6 +258,10 @@
     background: rgba(250, 248, 244, 0.85);
     backdrop-filter: blur(20px) saturate(1.5);
     -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  }
+
+  html.dark .nav-blur {
+    background: rgba(20, 18, 16, 0.88);
   }
 
   .font-mono-data {
