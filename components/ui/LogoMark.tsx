@@ -47,21 +47,21 @@ export function LogoMark({ className = "", size = 32, animated = false }: LogoMa
           Reads as: "I see the decision point ahead." */}
       <path
         d="M 28,25.5 L 28,18"
-        stroke="var(--accent-brass, #A3863A)"
+        style={{ stroke: "var(--accent-brass, #A3863A)" }}
         strokeWidth="1.75"
         strokeLinecap="round"
         className="logo-stem"
       />
       <path
         d="M 28,18 L 21.5,11"
-        stroke="var(--accent-brass, #A3863A)"
+        style={{ stroke: "var(--accent-brass, #A3863A)" }}
         strokeWidth="1.75"
         strokeLinecap="round"
         className="logo-branch-left"
       />
       <path
         d="M 28,18 L 34.5,11"
-        stroke="var(--accent-brass, #A3863A)"
+        style={{ stroke: "var(--accent-brass, #A3863A)" }}
         strokeWidth="1.75"
         strokeLinecap="round"
         className="logo-branch-right"
@@ -72,7 +72,7 @@ export function LogoMark({ className = "", size = 32, animated = false }: LogoMa
         cx="28"
         cy="18"
         r="2.25"
-        fill="var(--accent-brass, #A3863A)"
+        style={{ fill: "var(--accent-brass, #A3863A)" }}
         className="logo-dot"
       />
     </svg>
