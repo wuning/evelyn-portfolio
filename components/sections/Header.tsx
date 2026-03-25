@@ -65,7 +65,7 @@ export function Header() {
           ))}
           <button
             onClick={toggle}
-            className="flex items-center gap-1.5 rounded-[6px] border border-[var(--border-subtle)] px-2.5 py-1.5 text-[12px] font-medium text-[var(--text-secondary)] tracking-[0.02em] transition-all duration-150 hover:border-[var(--accent-brass)] hover:text-[var(--accent-brass)]"
+            className="flex items-center gap-1.5 rounded-[6px] border border-[var(--border-medium)] px-2.5 py-1.5 text-[12px] font-medium text-[var(--text-secondary)] tracking-[0.02em] transition-all duration-150 hover:border-[var(--accent-brass)] hover:text-[var(--accent-brass)]"
             aria-label={locale === "en" ? "Switch to Chinese" : "Switch to English"}
           >
             <span
@@ -78,7 +78,7 @@ export function Header() {
           </button>
           <button
             onClick={toggleTheme}
-            className="flex items-center justify-center w-8 h-8 rounded-[6px] border border-[var(--border-subtle)] text-[var(--text-secondary)] transition-all duration-150 hover:border-[var(--accent-brass)] hover:text-[var(--accent-brass)]"
+            className="flex items-center justify-center w-8 h-8 rounded-[6px] border border-[var(--border-medium)] text-[var(--text-primary)] transition-all duration-150 hover:border-[var(--accent-brass)] hover:text-[var(--accent-brass)]"
             aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
           >
             {theme === "light" ? <Moon size={14} /> : <Sun size={14} />}
@@ -88,14 +88,14 @@ export function Header() {
         <div className="md:hidden flex items-center gap-2">
           <button
             onClick={toggleTheme}
-            className="flex items-center justify-center w-8 h-8 rounded-[6px] border border-[var(--border-subtle)] text-[var(--text-secondary)]"
+            className="flex items-center justify-center w-8 h-8 rounded-[6px] border border-[var(--border-medium)] text-[var(--text-primary)]"
             aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
           >
             {theme === "light" ? <Moon size={14} /> : <Sun size={14} />}
           </button>
           <button
             onClick={toggle}
-            className="flex items-center gap-1.5 text-[12px] font-medium text-[var(--text-secondary)] border border-[var(--border-subtle)] rounded-[6px] px-2.5 py-1"
+            className="flex items-center gap-1.5 text-[12px] font-medium text-[var(--text-secondary)] border border-[var(--border-medium)] rounded-[6px] px-2.5 py-1"
             aria-label={locale === "en" ? "Switch to Chinese" : "Switch to English"}
           >
             <span
